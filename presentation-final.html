@@ -30,8 +30,10 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #0A0A0F 0%, #12121A 100%);
             color: var(--light-grey);
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
         }
 
         /* Top Navigation Bar - Modern Glassmorphism */
@@ -96,18 +98,19 @@
         .presentation {
             padding-top: 64px;
             width: 100vw;
-            height: 100vh;
+            height: calc(100vh - 64px);
             position: relative;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Section containers */
         .section {
             width: 100%;
-            height: calc(100vh - 64px);
-            overflow-y: auto;
-            overflow-x: hidden;
+            min-height: 100%;
             display: none;
-            padding: 48px 64px 64px 64px;
         }
 
         .section.active {
@@ -134,8 +137,25 @@
 
         /* Slide content */
         .slide-content {
-            margin-bottom: 64px;
-            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: calc(100vh - 64px);
+            max-height: calc(100vh - 64px);
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 32px 48px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .slide-content.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @keyframes fadeIn {
@@ -153,26 +173,26 @@
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 800;
             color: var(--light-grey);
-            margin-bottom: 28px;
-            letter-spacing: -1px;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         h3 {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--yellow);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             letter-spacing: -0.5px;
         }
 
         p {
-            font-size: 20px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
             color: var(--light-grey);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
@@ -226,16 +246,16 @@
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-top: 32px;
+            gap: 32px;
+            margin-top: 20px;
         }
 
         .stat {
-            margin: 16px 0;
+            margin: 12px 0;
         }
 
         .stat-value {
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 900;
             background: linear-gradient(135deg, var(--green) 0%, var(--yellow) 100%);
             -webkit-background-clip: text;
@@ -246,21 +266,21 @@
         }
 
         .stat-label {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--medium-grey);
-            margin-top: 6px;
+            margin-top: 4px;
             font-weight: 500;
         }
 
         ul {
             list-style: none;
-            margin: 16px 0;
+            margin: 12px 0;
         }
 
         li {
-            font-size: 20px;
-            padding: 10px 0;
-            padding-left: 32px;
+            font-size: 15px;
+            padding: 7px 0;
+            padding-left: 24px;
             position: relative;
         }
 
@@ -301,10 +321,10 @@
         .insight-box {
             background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(251, 191, 36, 0.08));
             border: 1px solid rgba(0, 255, 136, 0.3);
-            border-radius: 16px;
-            padding: 20px 28px;
-            margin-top: 32px;
-            font-size: 22px;
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin-top: 20px;
+            font-size: 16px;
             font-weight: 600;
             text-align: center;
             color: var(--yellow);
@@ -313,9 +333,9 @@
 
         .positioning-map {
             position: relative;
-            width: 600px;
-            height: 600px;
-            margin: 32px auto;
+            width: 480px;
+            height: 480px;
+            margin: 20px auto;
         }
 
         .map-axis-x, .map-axis-y {
@@ -1322,21 +1342,25 @@
         /* Mockup Preview Blocks */
         .mockup-preview-container {
             display: flex;
-            gap: 32px;
-            max-width: 1400px;
-            margin: 32px auto;
-            padding: 0 20px;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            flex-shrink: 0;
+            width: 100%;
         }
 
         .mockup-preview-block {
             flex: 1;
             position: relative;
-            height: 600px;
-            border-radius: 16px;
+            height: 450px;
+            min-height: 450px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             background: rgba(12, 12, 18, 0.6);
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .mockup-preview-block:hover {
@@ -1381,27 +1405,27 @@
         }
 
         .mockup-preview-title {
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--light-grey);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .mockup-preview-description {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--medium-grey);
-            line-height: 1.6;
-            margin-bottom: 32px;
+            line-height: 1.5;
+            margin-bottom: 20px;
             max-width: 400px;
         }
 
         .mockup-cta-button {
-            padding: 16px 40px;
+            padding: 12px 32px;
             background: linear-gradient(135deg, var(--green), #00CC6A);
             color: var(--black);
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -1464,6 +1488,119 @@
             background: rgba(255, 255, 255, 0.15);
             transform: scale(1.1);
         }
+
+        /* Why Me Section */
+        .why-me-section {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+            background: rgba(28, 28, 36, 0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .intro-header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-top: 0;
+            flex-shrink: 0;
+        }
+
+        .intro-header h2 {
+            font-size: 42px;
+            color: var(--light-grey);
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .intro-header h3 {
+            font-size: 28px;
+            color: var(--green);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .why-me-content h3 {
+            color: var(--yellow);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+
+        .why-me-content p {
+            color: var(--light-grey);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .why-me-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .why-me-highlight {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--green);
+            border-radius: 6px;
+        }
+
+        .why-me-highlight-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .why-me-highlight-text {
+            font-size: 13px;
+            color: var(--light-grey);
+            line-height: 1.4;
+        }
+
+        .why-me-highlight-text strong {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .why-me-photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(26, 107, 255, 0.1));
+            border: 2px solid rgba(0, 255, 136, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: var(--medium-grey);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-me-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-me-photo-placeholder {
+            font-size: 14px;
+            color: var(--medium-grey);
+            text-align: center;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -1483,21 +1620,43 @@
         <div class="section active" id="product-market">
             <!-- Intro Slide -->
             <div class="slide-content">
-                <div class="logo-container">
-                    <div class="logo-bars">
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                    </div>
-                    <div class="logo-text">LEVL</div>
-                    <div class="tagline">Level up your game</div>
+                <!-- Intro Header -->
+                <div class="intro-header">
+                    <h2>Sports Prediction Markets Platform</h2>
+                    <h3>Product Manager Case Study</h3>
                 </div>
-                <div style="text-align: center; margin-top: 48px;">
-                    <h2 style="font-size: 36px;">Sports Prediction Markets Platform</h2>
-                    <h3 style="color: var(--green); margin-top: 32px;">Product Manager Case Study</h3>
-                    <p class="subtitle" style="margin-top: 16px;">Prop Model Approach for Sports Betting</p>
+
+                <!-- Why Me Section -->
+                <div class="why-me-section">
+                    <div class="why-me-content">
+                        <h3>WHY ME?</h3>
+                        <p>
+                            Product Manager with <strong>přes 4 roky at Livesport</strong>, managing Flashscore - a global sports platform with <strong>110M users worldwide</strong>. Deep understanding of sports products, user behavior, and what drives engagement in the competitive sports tech landscape.
+                        </p>
+                        <div class="why-me-highlights">
+                            <div class="why-me-highlight">
+                                <div class="why-me-highlight-icon">⚽</div>
+                                <div class="why-me-highlight-text">
+                                    <strong>Sports Product Manager:</strong> Product owner for web platform & KaiOS app at Livesport
+                                </div>
+                            </div>
+                            <div class="why-me-highlight">
+                                <div class="why-me-highlight-icon">💻</div>
+                                <div class="why-me-highlight-text">
+                                    <strong>Full-Stack Experience:</strong> 10 years in online - marketing, product, development
+                                </div>
+                            </div>
+                            <div class="why-me-highlight">
+                                <div class="why-me-highlight-icon">🚀</div>
+                                <div class="why-me-highlight-text">
+                                    <strong>Builder Mindset:</strong> Built and launched multiple web projects from concept to execution
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-me-photo">
+                        <img src="me.png" alt="Tomáš Roztočil">
+                    </div>
                 </div>
             </div>
 
@@ -1651,7 +1810,7 @@
 
             <!-- Slide 6: Product Experience Preview -->
             <div class="slide-content">
-                <h2 style="text-align: center; margin-bottom: 32px;">Product Experience</h2>
+                <h2 style="text-align: center; margin-bottom: 20px;">Product Experience</h2>
                 <div class="mockup-preview-container">
                     <!-- Desktop Preview Block -->
                     <div class="mockup-preview-block">
@@ -1739,7 +1898,7 @@
                             <div class="mockup-preview-label">DESKTOP EXPERIENCE</div>
                             <div class="mockup-preview-title">Full Platform</div>
                             <div class="mockup-preview-description">
-                                Comprehensive view with multi-sport sidebar, live matches, and extensive betting opportunities across all markets.
+                                Pohodlné, plnohodnotné prostředí pro detailní analýzy a pokročilé strategie. Velký prostor pro srovnávání odds a sledování více zápasů najednou.
                             </div>
                             <button class="mockup-cta-button" data-mockup="desktop">View Desktop</button>
                         </div>
@@ -1809,7 +1968,7 @@
                             <div class="mockup-preview-label">MOBILE EXPERIENCE</div>
                             <div class="mockup-preview-title">On-the-Go</div>
                             <div class="mockup-preview-description">
-                                Optimized mobile app with quick access to live matches, streamlined betting, and intuitive navigation.
+                                Optimized mobile app with quick access to live matches, streamlined betting, and intuitive navigation. App notifications tě udrží informovaného o všem důležitém.
                             </div>
                             <button class="mockup-cta-button" data-mockup="mobile">View Mobile App</button>
                         </div>
@@ -1818,7 +1977,7 @@
             </div>
 
             <!-- Slide 6 HIDDEN: MODERN COMPACT DESKTOP MOCKUP -->
-            <div class="slide-content" style="display: none;" id="desktop-mockup-full">
+            <div class="slide-content" style="display: none;" id="desktop-mockup-source">
                 <h2 style="text-align: center; margin-bottom: 16px;">Product Experience: Desktop</h2>
                 <div class="desktop-mockup">
                     <div class="desktop-header">
@@ -2372,7 +2531,7 @@
             </div>
 
             <!-- Slide 7 HIDDEN: MODERN COMPACT MOBILE MOCKUP -->
-            <div class="slide-content" style="display: none;" id="mobile-mockup-full">
+            <div class="slide-content" style="display: none;" id="mobile-mockup-source">
                 <h2 style="text-align: center; margin-bottom: 16px;">Product Experience: Mobile</h2>
                 <div class="mobile-mockup">
                     <div class="mobile-notch">
@@ -3066,15 +3225,27 @@
                 sections.forEach(s => s.classList.remove('active'));
                 document.getElementById(targetSection).classList.add('active');
 
-                // Scroll to top of section
-                document.getElementById(targetSection).scrollTop = 0;
+                // Scroll presentation to top
+                const presentation = document.querySelector('.presentation');
+                presentation.scrollTop = 0;
+
+                // Make first slide of new section visible
+                const firstSlide = document.querySelector(`#${targetSection} .slide-content`);
+                if (firstSlide) {
+                    setTimeout(() => {
+                        firstSlide.classList.add('visible');
+                    }, 100);
+                }
             });
         });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             const activeLinkIndex = Array.from(sectionLinks).findIndex(link => link.classList.contains('active'));
+            const activeSection = document.querySelector('.section.active');
+            const slides = activeSection ? activeSection.querySelectorAll('.slide-content') : [];
 
+            // Section navigation (left/right arrows)
             if (e.key === 'ArrowRight' && activeLinkIndex < sectionLinks.length - 1) {
                 e.preventDefault();
                 sectionLinks[activeLinkIndex + 1].click();
@@ -3088,10 +3259,46 @@
                 e.preventDefault();
                 sectionLinks[sectionLinks.length - 1].click();
             }
+            // Slide navigation (up/down arrows)
+            else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && activeSection) {
+                e.preventDefault();
+                const presentation = document.querySelector('.presentation');
+                const currentScrollTop = presentation.scrollTop;
+                const slideHeight = window.innerHeight - 64;
+
+                if (e.key === 'ArrowDown') {
+                    presentation.scrollTop = currentScrollTop + slideHeight;
+                } else if (e.key === 'ArrowUp') {
+                    presentation.scrollTop = currentScrollTop - slideHeight;
+                }
+            }
         });
 
         // Match Detail Modal - Wait for DOM to load
         document.addEventListener('DOMContentLoaded', function() {
+            // Slide animations with IntersectionObserver
+            const slideObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px'
+            });
+
+            // Observe all slides
+            document.querySelectorAll('.slide-content').forEach(slide => {
+                slideObserver.observe(slide);
+            });
+
+            // Make first slide visible immediately
+            const firstSlide = document.querySelector('.section.active .slide-content');
+            if (firstSlide) {
+                firstSlide.classList.add('visible');
+            }
+
             const matchModal = document.getElementById('match-modal');
             const modalClose = document.querySelector('.modal-close');
             const modalTabs = document.querySelectorAll('.modal-tab');
@@ -3517,22 +3724,30 @@
     <script>
         // Clone hidden mockups into modals
         document.addEventListener('DOMContentLoaded', function() {
-            const desktopSource = document.getElementById('desktop-mockup-full');
-            const mobileSource = document.getElementById('mobile-mockup-full');
+            const desktopSource = document.getElementById('desktop-mockup-source');
+            const mobileSource = document.getElementById('mobile-mockup-source');
 
             const desktopTarget = document.querySelector('#desktop-mockup-modal .mockup-full-content');
             const mobileTarget = document.querySelector('#mobile-mockup-modal .mockup-full-content');
 
             if (desktopSource && desktopTarget) {
-                const desktopClone = desktopSource.cloneNode(true);
-                desktopClone.style.display = 'block';
-                desktopTarget.appendChild(desktopClone);
+                // Clone the inner content (the actual mockup, not the slide-content wrapper)
+                const desktopMockup = desktopSource.querySelector('.desktop-mockup');
+                if (desktopMockup) {
+                    const desktopClone = desktopMockup.cloneNode(true);
+                    desktopTarget.innerHTML = '';
+                    desktopTarget.appendChild(desktopClone);
+                }
             }
 
             if (mobileSource && mobileTarget) {
-                const mobileClone = mobileSource.cloneNode(true);
-                mobileClone.style.display = 'block';
-                mobileTarget.appendChild(mobileClone);
+                // Clone the inner content (the actual mockup, not the slide-content wrapper)
+                const mobileMockup = mobileSource.querySelector('.mobile-mockup');
+                if (mobileMockup) {
+                    const mobileClone = mobileMockup.cloneNode(true);
+                    mobileTarget.innerHTML = '';
+                    mobileTarget.appendChild(mobileClone);
+                }
             }
         });
     </script>
