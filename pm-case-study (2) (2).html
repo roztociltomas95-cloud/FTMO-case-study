@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Manager — Sports Prediction Markets | Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080810;
+      --surface: #10101a;
+      --surface-2: #161624;
+      --surface-3: #1c1c2e;
+      --border: rgba(255,255,255,0.07);
+      --border-bright: rgba(255,255,255,0.14);
+      --accent: #1a6bff;
+      --accent-light: #4d8fff;
+      --accent-soft: rgba(26,107,255,0.12);
+      --accent-glow: rgba(26,107,255,0.28);
+      --text: #f0f0f4;
+      --text-muted: #888;
+      --text-dim: #444;
+      --red: #ff4545;
+      --purple: #a855f7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────── HERO ─────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 80px 24px;
+    }
+
+    /* Grid texture */
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    /* Animated blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(26,107,255,0.18) 0%, transparent 70%);
+      top: -150px; left: -100px;
+      animation: drift1 14s ease-in-out infinite alternate;
+    }
+    .blob-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(77,137,255,0.12) 0%, transparent 70%);
+      bottom: -100px; right: -80px;
+      animation: drift2 18s ease-in-out infinite alternate;
+    }
+    .blob-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%);
+      top: 40%; left: 60%;
+      animation: drift3 22s ease-in-out infinite alternate;
+    }
+    @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(60px, 40px) scale(1.1); } }
+    @keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-40px, -50px) scale(1.08); } }
+    @keyframes drift3 { from { transform: translate(0,0) scale(1); } to { transform: translate(-30px, 30px) scale(0.9); } }
+
+    .hero-content {
+      position: relative;
+      max-width: 820px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(26,107,255,0.35);
+      color: var(--accent-light);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .tag-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(77,137,255,0.5); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(77,137,255,0); } }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, #5fa3ff 0%, var(--accent) 50%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 56px;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    /* Hero badges */
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--surface);
+      border: 1px solid var(--border-bright);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 16px;
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ─────────────────── LAYOUT ─────────────────── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 88px 24px;
+    }
+
+    .section + .section { border-top: 1px solid var(--border); }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Section label with line */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-bright), transparent);
+    }
+
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    p { color: var(--text-muted); margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); font-weight: 600; }
+
+    /* ─────────────────── CARDS ─────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      opacity: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(26,107,255,0.08) 0%, transparent 100%);
+      transition: opacity 0.3s;
+    }
+
+    .card:hover {
+      border-color: rgba(26,107,255,0.4);
+      box-shadow: 0 0 32px rgba(26,107,255,0.12), 0 8px 32px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-num {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-family: 'Sora', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: rgba(26,107,255,0.07);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .card-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(26,107,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+      position: relative;
+    }
+
+    .card p { font-size: 14px; margin-bottom: 0; position: relative; }
+
+    /* ─────────────────── HIGHLIGHT BOX ─────────────────── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(26,107,255,0.1) 0%, rgba(124,58,237,0.06) 100%);
+      border: 1px solid rgba(26,107,255,0.25);
+      border-radius: 20px;
+      padding: 36px;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--purple), transparent);
+    }
+
+    .highlight-box h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+    /* ─────────────────── INTERVIEW FORMAT ─────────────────── */
+    /* Time split bar */
+    .time-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 100px;
+      overflow: hidden;
+      margin: 32px 0 40px;
+      gap: 3px;
+    }
+    .time-bar-seg {
+      border-radius: 100px;
+      transition: flex 0.3s;
+    }
+    .time-bar-seg.intro       { flex: 10; background: rgba(26,107,255,0.4); }
+    .time-bar-seg.presentation { flex: 30; background: var(--accent); }
+    .time-bar-seg.discussion  { flex: 20; background: rgba(168,85,247,0.6); }
+
+    .time-bar-legend {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-dot.intro        { background: rgba(26,107,255,0.5); }
+    .legend-dot.presentation { background: var(--accent); }
+    .legend-dot.discussion   { background: rgba(168,85,247,0.7); }
+
+    /* Horizontal steps */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: start;
+      gap: 0;
+      margin-top: 0;
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step:hover {
+      border-color: rgba(26,107,255,0.35);
+      box-shadow: 0 0 24px rgba(26,107,255,0.10);
+      transform: translateY(-2px);
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0 auto 14px;
+    }
+    .step-num.s1 { background: rgba(26,107,255,0.2); color: var(--accent-light); }
+    .step-num.s2 { background: var(--accent); color: #fff; box-shadow: 0 0 16px rgba(26,107,255,0.5); }
+    .step-num.s3 { background: rgba(168,85,247,0.2); color: #c084fc; }
+
+    .step-time {
+      display: inline-block;
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .step-time.s1 { color: var(--accent-light); }
+    .step-time.s2 { color: #fff; }
+    .step-time.s3 { color: #c084fc; }
+
+    .step-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .step p { font-size: 13px; line-height: 1.55; margin: 0; }
+
+    .step-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      margin-top: 60px;
+      color: var(--text-dim);
+      font-size: 20px;
+    }
+
+    /* ─────────────────── WHAT GOOD LOOKS LIKE ─────────────────── */
+    .eval-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .eval-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .eval-item:hover {
+      border-color: rgba(26,107,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    .eval-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .eval-item h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .eval-item p { font-size: 13px; margin: 0; }
+
+    /* ─────────────────── PROFILE CARDS ─────────────────── */
+    .trait-tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      border: 1px solid rgba(26,107,255,0.25);
+      color: #7aadff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ─────────────────── CONTACT ─────────────────── */
+    .contact-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 64px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent);
+    }
+
+    .contact-glow {
+      position: absolute;
+      width: 400px; height: 400px;
+      top: -150px; left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-section h2 {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .contact-section > p {
+      max-width: 460px;
+      margin: 0 auto 36px;
+      position: relative;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #ffffff;
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: box-shadow 0.3s, transform 0.2s;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(26,107,255,0.3);
+    }
+
+    .email-link:hover {
+      box-shadow: 0 8px 40px rgba(26,107,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    .email-link svg { width: 18px; height: 18px; }
+
+    /* ─────────────────── FOOTER ─────────────────── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    /* ─────────────────── DIVIDER ─────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+      margin: 0 24px;
+    }
+
+    /* ─────────────────── RESPONSIVE ─────────────────── */
+    @media (max-width: 700px) {
+      .hero-badges { gap: 8px; }
+      .steps { grid-template-columns: 1fr; }
+      .step-arrow { display: none; }
+      .contact-section { padding: 40px 24px; }
+      .time-bar-legend { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="hero-content">
+      <div class="tag">
+        <span class="tag-dot"></span>
+        Open Role · Product Management
+      </div>
+      <h1>Build the Future of<br /><em>Sports Prediction Markets</em></h1>
+      <p class="hero-sub">
+        We're taking FTMO's proven model — challenge, fund, profit-share — and bringing it to sports.
+        This case study is how we find the person to build it.
+      </p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M7 4v3.5l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          60-min interview
+        </div>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11 L5 2 L7 8 L9 5 L12 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          0→1 product build
+        </div>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 3V2M9 3V2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          New brand from scratch
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BACKGROUND ═══════════════════ -->
+  <div class="divider"></div>
+  <section class="section reveal">
+    <div class="section-label">Background</div>
+    <h2>The Opportunity</h2>
+    <p>
+      FTMO is one of the world's leading proprietary trading firms — funding traders who prove their edge through a structured evaluation programme. We are now expanding beyond financial markets and stepping into <strong>sports prediction markets</strong>.
+    </p>
+    <p>
+      The idea is simple in principle, ambitious in execution: replicate the FTMO model — challenge, evaluation, funding — but for sports. Participants go through a challenge, get funded, and use that capital to participate in sports prediction markets. It's FTMO's DNA applied to a new arena.
+    </p>
+    <p>
+      Critically, this will be built as a <strong>separate, independent brand</strong>. You have access to FTMO's infrastructure, operational know-how, technology, and resources — but you are starting from a blank sheet of paper on brand, product, and go-to-market. The reason for this separation is deliberate: FTMO is perceived as a platform for serious, disciplined traders. Sports prediction markets sit much closer to gambling in the public consciousness, and we don't want that association to bleed into the core FTMO brand. The new venture needs to stand entirely on its own — earning its own trust, its own audience, and its own identity.
+    </p>
+    <div class="highlight-box">
+      <h3>⚡ Your mandate</h3>
+      <p>
+        Imagine you are the founding PM of this new venture. You have FTMO's backing — their tech stack, compliance expertise, funding model, and operational muscle. Now design, from scratch, what this sports prediction markets product looks like: the brand, the product experience, the user journey, the business model, the market entry strategy, and how you'd build a team around it.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ INTERVIEW FORMAT ═══════════════════ -->
+  <div class="divider"></div>
+  <section class="section reveal">
+    <div class="section-label">Interview Format</div>
+    <h2>How the Session Runs</h2>
+    <p>A single 60-minute session, split across three stages:</p>
+
+    <div class="time-bar">
+      <div class="time-bar-seg intro"></div>
+      <div class="time-bar-seg presentation"></div>
+      <div class="time-bar-seg discussion"></div>
+    </div>
+
+    <div class="time-bar-legend">
+      <div class="legend-item"><span class="legend-dot intro"></span>Introduction — 10 min</div>
+      <div class="legend-item"><span class="legend-dot presentation"></span>Presentation — 30 min</div>
+      <div class="legend-item"><span class="legend-dot discussion"></span>Open Discussion — 20 min</div>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num s1">1</div>
+        <div class="step-time s1">10'</div>
+        <div class="step-title">Introduction</div>
+        <p>A conversation to get to know you — your background, what draws you to this space, and how you think about building 0→1 products. No special preparation needed; just be ready to talk.</p>
+      </div>
+
+      <div class="step-arrow">→</div>
+
+      <div class="step">
+        <div class="step-num s2">2</div>
+        <div class="step-time s2">30'</div>
+        <div class="step-title">Case Study Presentation</div>
+        <p>Your main slot. Walk us through your vision for this new venture. Prioritise depth and coherence over breadth — we care about the quality of your thinking, not the number of slides.</p>
+      </div>
+
+      <div class="step-arrow">→</div>
+
+      <div class="step">
+        <div class="step-num s3">3</div>
+        <div class="step-time s3">20'</div>
+        <div class="step-title">Open Discussion</div>
+        <p>We dig deeper into what you've presented, challenge assumptions, and explore how you handle ambiguity. This is also your time to ask us anything — about the project, the team, or the direction.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CASE STUDY ═══════════════════ -->
+  <div class="divider"></div>
+  <section class="section reveal">
+    <div class="section-label">The Case Study</div>
+    <h2>What You'll Present</h2>
+    <p>
+      Design a sports prediction markets venture from scratch — new brand, FTMO's infrastructure behind it. The brief is intentionally open-ended. There is no right answer, no expected structure, and no required coverage. What we want to understand is how <em>you</em> think about building a business: what you prioritise, how you connect product decisions to commercial ones, and where you'd put your energy first. The four areas below are prompts to help you get started, not a template to fill in.
+    </p>
+
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 32px;">
+      <div class="card">
+        <span class="card-num">01</span>
+        <div class="card-icon">🌍</div>
+        <h3>The Opportunity</h3>
+        <p>Where does this sit in the market? Who is the user, why do they care, and why is this the right moment to build it?</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02</span>
+        <div class="card-icon">🎨</div>
+        <h3>The Product & Brand</h3>
+        <p>What are you building? What does the end-to-end experience feel like, and what does the brand stand for in a crowded space?</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03</span>
+        <div class="card-icon">📊</div>
+        <h3>The Business</h3>
+        <p>How does it make money, how does it grow, and how do you think about risk — both financial and operational?</p>
+      </div>
+      <div class="card">
+        <span class="card-num">04</span>
+        <div class="card-icon">🚀</div>
+        <h3>The Build</h3>
+        <p>How do you go from idea to live product? What does your team, roadmap, and launch look like in the first six months?</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 24px;">
+      <h3>💡 A note on format</h3>
+      <p>Bring whatever tells your story best — slides, a Figma board, a one-pager, a live prototype. Depth on a few areas beats shallow coverage of everything.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROFILE + EVALUATION (merged) ═══════════════════ -->
+  <div class="divider"></div>
+  <section class="section reveal">
+    <div class="section-label">Who We're Looking For</div>
+    <h2>The Profile</h2>
+    <p>
+      This role spans far more than a traditional PM scope. We are looking for someone who can hold product, business, and marketing simultaneously — and thrive in the uncertainty of building something that doesn't exist yet.
+    </p>
+
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 32px;">
+
+      <div class="card">
+        <span class="card-num">01</span>
+        <div class="card-icon">🏗️</div>
+        <h3>Product & Brand</h3>
+        <p>You turn fuzzy visions into coherent user experiences. You have instinct for what a brand should feel like and how to bring it to life.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; position:relative;">
+          <span class="trait-tag">0→1 builder</span>
+          <span class="trait-tag">UX thinking</span>
+          <span class="trait-tag">Brand narrative</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">02</span>
+        <div class="card-icon">📈</div>
+        <h3>Business & Growth</h3>
+        <p>You think in unit economics, revenue models, and long-term moats. You know how to acquire users and make growth repeatable.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; position:relative;">
+          <span class="trait-tag">Revenue models</span>
+          <span class="trait-tag">GTM strategy</span>
+          <span class="trait-tag">Data-driven</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">03</span>
+        <div class="card-icon">📣</div>
+        <h3>Marketing & Community</h3>
+        <p>You understand positioning and what makes a brand resonate with a passionate, niche audience. You build communities, not just funnels.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; position:relative;">
+          <span class="trait-tag">Positioning</span>
+          <span class="trait-tag">Community building</span>
+          <span class="trait-tag">Storytelling</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">04</span>
+        <div class="card-icon">⚖️</div>
+        <h3>Operations & Risk</h3>
+        <p>You are pragmatic about what it takes to actually run this — compliance, partnerships, and scaling operations without losing control.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; position:relative;">
+          <span class="trait-tag">Regulatory awareness</span>
+          <span class="trait-tag">Risk thinking</span>
+          <span class="trait-tag">Team builder</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="highlight-box" style="margin-top: 28px;">
+      <h3>What we look for in your presentation</h3>
+      <p>We aren't scoring a written exam. We look for a <strong>sharp point of view</strong> on the space, <strong>connected thinking</strong> where product, brand, and business decisions reinforce each other, a <strong>bias for action</strong> — knowing what to do first and why — and <strong>honest acknowledgement of risk</strong>. The candidates who stand out don't cover everything; they make us believe they can lead this.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <div class="divider"></div>
+  <section class="section reveal" style="padding-bottom: 88px;">
+    <div class="contact-section">
+      <div class="contact-glow"></div>
+      <div class="section-label" style="justify-content: center; margin-bottom: 20px;">Questions?</div>
+      <h2>Reach Out Directly</h2>
+      <p>
+        If you have any questions about the role, the case study, or the interview process before your session, don't hesitate to get in touch.
+      </p>
+      <a href="mailto:j.herbrich@ftmo.com" class="email-link">
+        <svg viewBox="0 0 18 18" fill="none">
+          <path d="M2 4.5h14M2 4.5l7 5.5 7-5.5M2 4.5v9a1 1 0 001 1h12a1 1 0 001-1v-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        j.herbrich@ftmo.com
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer>
+    <p>This document is intended solely for candidates in the interview process. © 2026 FTMO Group.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

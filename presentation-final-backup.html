@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVL - Build the Future of Sports Prediction Markets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0A0A0F;
+            --green: #00FF88;
+            --yellow: #FBBF24;
+            --blue: #1A6BFF;
+            --light-grey: #E5E5E5;
+            --medium-grey: #888888;
+            --dark-grey: #2A2A2F;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--light-grey);
+            overflow: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(42, 42, 47, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-title {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--green) 0%, var(--yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .section-link {
+            color: var(--medium-grey);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .section-link:hover {
+            color: var(--green);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .section-link.active {
+            color: var(--green);
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid var(--green);
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .slide-header {
+            margin-bottom: 40px;
+        }
+
+        .slide-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--light-grey);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 32px;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--yellow);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--light-grey);
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: var(--medium-grey);
+            font-weight: 400;
+        }
+
+        /* Logo */
+        .logo-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .logo {
+            display: inline-block;
+        }
+
+        .logo-bars {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--green) 0%, var(--yellow) 100%);
+            border-radius: 8px;
+            margin: 0 auto 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 12px;
+        }
+
+        .logo-bar {
+            height: 6px;
+            background: var(--black);
+            border-radius: 2px;
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green) 0%, var(--yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: var(--medium-grey);
+            margin-top: 8px;
+        }
+
+        /* Content layouts */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        /* Stats */
+        .stat {
+            margin: 20px 0;
+        }
+
+        .stat-value {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--green) 0%, var(--yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 20px;
+            color: var(--medium-grey);
+            margin-top: 8px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        li {
+            font-size: 24px;
+            padding: 12px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        li.bullet::before {
+            content: "•";
+            color: var(--yellow);
+        }
+
+        li.cross::before {
+            content: "❌";
+        }
+
+        /* Boxes */
+        .box {
+            background: var(--dark-grey);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 20px 0;
+        }
+
+        .box-green {
+            border: 2px solid var(--green);
+        }
+
+        .box-yellow {
+            border: 2px solid var(--yellow);
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(251, 191, 36, 0.1));
+            border: 2px solid var(--yellow);
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-top: 40px;
+            font-size: 26px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--yellow);
+        }
+
+        /* Positioning map */
+        .positioning-map {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 40px auto;
+        }
+
+        .map-axis-x, .map-axis-y {
+            position: absolute;
+            background: var(--dark-grey);
+        }
+
+        .map-axis-x {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+        }
+
+        .map-axis-y {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+        }
+
+        .map-label {
+            position: absolute;
+            font-size: 16px;
+            color: var(--medium-grey);
+            font-weight: 600;
+        }
+
+        .map-label.top { top: 10px; left: 50%; transform: translateX(-50%); }
+        .map-label.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .map-label.left { left: 10px; top: 50%; transform: translateY(-50%); }
+        .map-label.right { right: 10px; top: 50%; transform: translateY(-50%); }
+
+        .map-point {
+            position: absolute;
+            font-size: 20px;
+            font-weight: 600;
+            transform: translate(-50%, -50%);
+        }
+
+        .map-point.levl {
+            color: var(--green);
+            font-size: 32px;
+            left: 25%;
+            top: 25%;
+        }
+
+        .map-point.ftmo {
+            color: var(--medium-grey);
+            left: 20%;
+            top: 15%;
+        }
+
+        .map-point.exchanges {
+            color: var(--medium-grey);
+            left: 30%;
+            top: 70%;
+        }
+
+        .map-point.sportsbooks {
+            color: var(--medium-grey);
+            left: 75%;
+            top: 75%;
+        }
+
+        .map-point.prop-firms {
+            color: var(--medium-grey);
+            left: 25%;
+            top: 35%;
+        }
+
+        /* Journey flow */
+        .journey {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .journey-step {
+            flex: 1;
+            text-align: center;
+        }
+
+        .journey-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green), var(--yellow));
+            color: var(--black);
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .journey-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .journey-content {
+            font-size: 18px;
+            color: var(--light-grey);
+            line-height: 1.4;
+        }
+
+        .journey-arrow {
+            font-size: 32px;
+            color: var(--yellow);
+            align-self: center;
+            margin-top: 30px;
+        }
+
+        /* Mockup */
+        .mockup {
+            background: var(--dark-grey);
+            border: 3px solid var(--green);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 30px auto;
+            max-width: 800px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--medium-grey);
+            margin-bottom: 24px;
+        }
+
+        .mockup-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--light-grey);
+        }
+
+        .mockup-nav {
+            font-size: 16px;
+            color: var(--medium-grey);
+        }
+
+        .progress-bar {
+            background: var(--dark-grey);
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green), var(--yellow));
+            transition: width 0.3s ease;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--dark-grey);
+        }
+
+        th {
+            color: var(--green);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        td {
+            color: var(--light-grey);
+            font-size: 20px;
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        /* Four pillars */
+        .pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .pillar {
+            background: var(--dark-grey);
+            border-left: 4px solid var(--green);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .pillar h4 {
+            color: var(--green);
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .pillar p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .pillar .vs {
+            font-size: 16px;
+            color: var(--medium-grey);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--dark-grey);
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--green);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 24px;
+            width: 2px;
+            height: calc(100% + 8px);
+            background: var(--dark-grey);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-month {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--yellow);
+            margin-bottom: 12px;
+        }
+
+        .timeline-content {
+            font-size: 18px;
+            color: var(--light-grey);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            background: rgba(42, 42, 47, 0.8);
+            padding: 16px 24px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--dark-grey);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--green);
+            box-shadow: 0 0 10px var(--green);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            color: var(--medium-grey);
+            font-size: 18px;
+            background: rgba(42, 42, 47, 0.8);
+            padding: 12px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .block-indicator {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            color: var(--green);
+            font-size: 16px;
+            font-weight: 600;
+            background: rgba(42, 42, 47, 0.8);
+            padding: 12px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Risk colors */
+        .risk-red { color: #FF4444; }
+        .risk-yellow { color: var(--yellow); }
+        .risk-green { color: var(--green); }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 40px;
+            }
+            h1 { font-size: 48px; }
+            h2 { font-size: 36px; }
+            .two-column, .three-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide active" data-block="intro">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-bars">
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                    </div>
+                    <div class="logo-text">LEVL</div>
+                    <div class="tagline">Level up your game</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <h2 style="color: var(--light-grey);">Building FTMO's Next Venture:</h2>
+                <h2>Sports Prediction Markets</h2>
+                <p class="subtitle" style="margin-top: 40px;">Product Manager Case Study</p>
+            </div>
+        </div>
+
+        <!-- BLOCK 1: THE OPPORTUNITY -->
+
+        <!-- Slide 2: Market Overview -->
+        <div class="slide" data-block="opportunity">
+            <div class="slide-header">
+                <div class="slide-icon">🌍</div>
+                <h2>Massive Market, Perfect Timing</h2>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Sports Betting Market</h3>
+                    <div class="stat">
+                        <div class="stat-value">$100.9B</div>
+                        <div class="stat-label">Current Market (2024)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">$187.4B</div>
+                        <div class="stat-label">Projected by 2030</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">11% CAGR</div>
+                        <div class="stat-label">Annual Growth Rate</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Key Trends</h3>
+                    <ul>
+                        <li><strong>84-90%</strong> of bets via mobile</li>
+                        <li><strong>76%</strong> Gen Z/Millennial market share</li>
+                        <li><strong>37 US states</strong> legalized + EU expansion</li>
+                        <li><strong>85%</strong> of Kalshi volume = sports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Competitive Landscape -->
+        <div class="slide" data-block="opportunity">
+            <div class="slide-header">
+                <div class="slide-icon">📊</div>
+                <h2>White Space in a Crowded Market</h2>
+            </div>
+            <div class="positioning-map">
+                <div class="map-axis-x"></div>
+                <div class="map-axis-y"></div>
+                <div class="map-label top">HIGH SKILL</div>
+                <div class="map-label bottom">LOW SKILL</div>
+                <div class="map-label left">LOW FEES</div>
+                <div class="map-label right">HIGH FEES</div>
+                <div class="map-point levl">★ LEVL</div>
+                <div class="map-point ftmo">◆ FTMO</div>
+                <div class="map-point exchanges">○ Betting Exchanges</div>
+                <div class="map-point sportsbooks">■ Sportsbooks</div>
+                <div class="map-point prop-firms">● Sports Prop</div>
+            </div>
+            <div class="insight-box">
+                "No competitor combines all three: FTMO challenge model + P2P markets + modern sports UX"
+            </div>
+        </div>
+
+        <!-- Slide 4: Target User -->
+        <div class="slide" data-block="opportunity">
+            <div class="slide-header">
+                <div class="slide-icon">🎯</div>
+                <h2>Meet Analytical Alex</h2>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Demographics</h3>
+                    <ul class="bullet">
+                        <li>Age: <strong>25-35</strong></li>
+                        <li>Income: <strong>$40K-80K</strong></li>
+                        <li>Location: <strong>Urban, tech-savvy</strong></li>
+                        <li>Education: <strong>College</strong></li>
+                    </ul>
+                    <h3 style="margin-top: 40px;">Profile</h3>
+                    <ul class="bullet">
+                        <li>Data-driven, analytical mindset</li>
+                        <li>Follows sports analytics (xG, advanced stats)</li>
+                        <li>Active on r/sportsbook, Discord</li>
+                        <li><strong>90%+ mobile betting</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Pain Points</h3>
+                    <ul class="cross">
+                        <li>Bookmaker margins eat profits</li>
+                        <li>Account limits when winning</li>
+                        <li>Limited bankroll for scaling</li>
+                        <li>Gambling stigma (wants skill recognition)</li>
+                    </ul>
+                    <h3 style="margin-top: 40px;">What LEVL Offers</h3>
+                    <ul>
+                        <li>Challenge validates skill</li>
+                        <li>P2P markets = better odds</li>
+                        <li>Funded account = scale strategy</li>
+                        <li>Community recognition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Why Now -->
+        <div class="slide" data-block="opportunity">
+            <div class="slide-header">
+                <div class="slide-icon">⚡</div>
+                <h2>Four Converging Trends</h2>
+            </div>
+            <div class="pillars">
+                <div class="box box-green">
+                    <h3>FTMO Model Proven</h3>
+                    <div class="stat">
+                        <div class="stat-value" style="font-size: 48px;">$7B</div>
+                        <div class="stat-label">Annual Revenue</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" style="font-size: 48px;">$2.4B</div>
+                        <div class="stat-label">EBITDA</div>
+                    </div>
+                </div>
+                <div class="box box-green">
+                    <h3>Prediction Markets Surge</h3>
+                    <ul class="bullet">
+                        <li>Polymarket: <strong>$3B+</strong> volume</li>
+                        <li>Kalshi: <strong>85%</strong> sports</li>
+                        <li>P2P model validated</li>
+                    </ul>
+                </div>
+                <div class="box box-green">
+                    <h3>Sports Betting Legalization</h3>
+                    <ul class="bullet">
+                        <li><strong>37 US states</strong> legal</li>
+                        <li>EU expansion ongoing</li>
+                        <li>Regulatory tailwinds</li>
+                    </ul>
+                </div>
+                <div class="box box-green">
+                    <h3>Tech Infrastructure Ready</h3>
+                    <ul class="bullet">
+                        <li>Real-time sports data (Flashscore)</li>
+                        <li>P2P platforms mature</li>
+                        <li>Mobile-first development</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="insight-box">
+                "FTMO's challenge model + Prediction markets' P2P mechanics + Sports betting's growth = LEVL"
+            </div>
+        </div>
+
+        <!-- BLOCK 2: THE PRODUCT & BRAND -->
+
+        <!-- Slide 6: Brand Reveal -->
+        <div class="slide" data-block="product">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-bars" style="width: 120px; height: 120px;">
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                    </div>
+                    <div class="logo-text" style="font-size: 96px;">LEVL</div>
+                    <div class="tagline" style="font-size: 28px;">Level up your game</div>
+                </div>
+            </div>
+            <div style="max-width: 900px; margin: 60px auto 0;">
+                <h3 style="text-align: center; font-size: 28px; margin-bottom: 30px;">Positioning</h3>
+                <p style="text-align: center; font-size: 26px; line-height: 1.6;">
+                    "The skill-based sports prediction platform where you prove your edge, get funded, and trade on fair P2P markets."
+                </p>
+                <div class="two-column" style="margin-top: 50px;">
+                    <div>
+                        <h3>Why LEVL?</h3>
+                        <ul class="bullet">
+                            <li>"Level up" = progression, gaming culture</li>
+                            <li>Modern spelling = tech-forward</li>
+                            <li>Separate from FTMO brand</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Brand Colors</h3>
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="width: 60px; height: 60px; background: var(--green); border-radius: 8px;"></div>
+                            <div style="width: 60px; height: 60px; background: var(--yellow); border-radius: 8px;"></div>
+                            <div style="width: 60px; height: 60px; background: var(--black); border: 2px solid var(--dark-grey); border-radius: 8px;"></div>
+                        </div>
+                        <p style="font-size: 16px; margin-top: 12px; color: var(--medium-grey);">Electric Green · Cyber Yellow · Deep Black</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Product Concept -->
+        <div class="slide" data-block="product">
+            <div class="slide-header">
+                <h2>Three Models, One Platform</h2>
+            </div>
+            <div style="text-align: center; margin: 50px 0;">
+                <div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px; margin-bottom: 16px;">FTMO Model</h3>
+                        <ul class="bullet" style="font-size: 18px;">
+                            <li>Challenge</li>
+                            <li>Evaluation</li>
+                            <li>Funding</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 48px; color: var(--yellow);">+</div>
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px; margin-bottom: 16px;">P2P Markets</h3>
+                        <ul class="bullet" style="font-size: 18px;">
+                            <li>Fair Pricing</li>
+                            <li>No Margins</li>
+                            <li>Transparent</li>
+                        </ul>
+                    </div>
+                    <div style="font-size: 48px; color: var(--yellow);">+</div>
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px; margin-bottom: 16px;">Sports UX</h3>
+                        <ul class="bullet" style="font-size: 18px;">
+                            <li>Real-time Data</li>
+                            <li>Mobile-First</li>
+                            <li>Live Markets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 50px; font-size: 72px; color: var(--yellow);">↓</div>
+                <div class="box box-yellow" style="max-width: 600px; margin: 30px auto;">
+                    <h2 style="color: var(--light-grey); text-align: center; margin-bottom: 20px;">LEVL</h2>
+                    <p style="text-align: center; font-size: 22px;">Sports Prediction Markets Platform</p>
+                </div>
+            </div>
+            <div class="insight-box">
+                "Unique combination no competitor has"
+            </div>
+        </div>
+
+        <!-- Slide 8: User Journey -->
+        <div class="slide" data-block="product">
+            <div class="slide-header">
+                <h2>From Discovery to Funded Trader</h2>
+            </div>
+            <div class="journey">
+                <div class="journey-step">
+                    <div class="journey-number">1</div>
+                    <div class="journey-title">DISCOVER</div>
+                    <div class="journey-content">
+                        Landing Page<br/>
+                        Sign up<br/>
+                        <strong>$99 fee</strong>
+                    </div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">2</div>
+                    <div class="journey-title">CHALLENGE</div>
+                    <div class="journey-content">
+                        Phase 1: 30 days<br/>
+                        10% profit target<br/>
+                        Max 10% drawdown
+                    </div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">3</div>
+                    <div class="journey-title">VERIFY</div>
+                    <div class="journey-content">
+                        Phase 2: 30 days<br/>
+                        5% profit target<br/>
+                        Max 10% drawdown
+                    </div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">4</div>
+                    <div class="journey-title">FUNDED</div>
+                    <div class="journey-content">
+                        Access P2P Markets<br/>
+                        <strong>$10K-50K capital</strong><br/>
+                        80% profit share
+                    </div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">5</div>
+                    <div class="journey-title">SCALE</div>
+                    <div class="journey-content">
+                        Community<br/>
+                        Leaderboards<br/>
+                        Share strategies
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <div style="text-align: center; margin-bottom: 20px; font-size: 20px; color: var(--medium-grey);">Progress Bar</div>
+                <div class="progress-bar" style="max-width: 800px; margin: 0 auto;">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-around; max-width: 800px; margin: 20px auto; font-size: 16px; color: var(--medium-grey);">
+                    <span>Level 1</span>
+                    <span>Level 2</span>
+                    <span>Level 3</span>
+                    <span>Funded</span>
+                    <span>Pro</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Challenge Dashboard Mockup -->
+        <div class="slide" data-block="product">
+            <div class="slide-header">
+                <h2>Product Experience: Challenge Dashboard</h2>
+            </div>
+            <div class="mockup">
+                <div class="mockup-header">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div class="logo-bars" style="width: 32px; height: 32px; padding: 4px;">
+                            <div class="logo-bar" style="height: 3px;"></div>
+                            <div class="logo-bar" style="height: 3px;"></div>
+                            <div class="logo-bar" style="height: 3px;"></div>
+                        </div>
+                        <span class="mockup-title">LEVL</span>
+                    </div>
+                    <div class="mockup-nav">Challenge · Profile · Logout</div>
+                </div>
+                <div style="font-size: 20px; color: var(--light-grey); margin-bottom: 24px;">
+                    <strong>Challenge Phase 1</strong> - Day 12 of 30
+                </div>
+                <div class="box box-green">
+                    <div style="font-size: 18px; color: var(--medium-grey); margin-bottom: 8px;">Current Profit</div>
+                    <div style="font-size: 48px; font-weight: 800; color: var(--green); margin-bottom: 20px;">+$847</div>
+                    <div style="font-size: 16px; color: var(--light-grey); margin-bottom: 12px;">Target: $1,000 (10%) · Progress: 84.7%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 84.7%;"></div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px;">
+                    <div class="box" style="padding: 20px;">
+                        <div style="font-size: 16px; color: var(--medium-grey); margin-bottom: 8px;">Daily Drawdown</div>
+                        <div style="font-size: 28px; font-weight: 700; color: var(--green);">-2.3% / -5%</div>
+                        <div style="font-size: 14px; color: var(--green); margin-top: 8px;">Safe ✓</div>
+                    </div>
+                    <div class="box" style="padding: 20px;">
+                        <div style="font-size: 16px; color: var(--medium-grey); margin-bottom: 8px;">Total Drawdown</div>
+                        <div style="font-size: 28px; font-weight: 700; color: var(--green);">-3.1% / -10%</div>
+                        <div style="font-size: 14px; color: var(--green); margin-top: 8px;">Safe ✓</div>
+                    </div>
+                </div>
+                <div style="margin-top: 24px;">
+                    <div style="font-size: 18px; color: var(--light-grey); margin-bottom: 16px;"><strong>Active Predictions</strong></div>
+                    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--dark-grey); font-size: 16px;">
+                        <span>Lakers vs Celtics</span>
+                        <span style="color: var(--green);">Yes: $0.62</span>
+                        <span style="color: var(--yellow); cursor: pointer;">[View Market]</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 12px 0; font-size: 16px;">
+                        <span>NFL: Chiefs win</span>
+                        <span style="color: var(--green);">Yes: $0.71</span>
+                        <span style="color: var(--yellow); cursor: pointer;">[View Market]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Prediction Market Mockup -->
+        <div class="slide" data-block="product">
+            <div class="slide-header">
+                <h2>Product Experience: Prediction Market</h2>
+            </div>
+            <div class="mockup">
+                <div class="mockup-header">
+                    <div class="mockup-title">Lakers vs. Celtics</div>
+                    <div class="mockup-nav">Tonight 8PM ET</div>
+                </div>
+                <div style="font-size: 28px; color: var(--light-grey); margin-bottom: 32px; text-align: center;">
+                    <strong>Will Lakers win?</strong>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
+                    <div class="box box-green" style="text-align: center; padding: 32px;">
+                        <div style="font-size: 32px; font-weight: 800; color: var(--green); margin-bottom: 16px;">YES</div>
+                        <div style="font-size: 56px; font-weight: 800; color: var(--green); margin-bottom: 8px;">$0.62</div>
+                        <div style="font-size: 20px; color: var(--medium-grey); margin-bottom: 24px;">(62% probability)</div>
+                        <div style="background: var(--green); color: var(--black); padding: 16px 32px; border-radius: 8px; font-size: 20px; font-weight: 700; cursor: pointer;">
+                            Buy Yes
+                        </div>
+                    </div>
+                    <div class="box" style="text-align: center; padding: 32px;">
+                        <div style="font-size: 32px; font-weight: 800; color: var(--medium-grey); margin-bottom: 16px;">NO</div>
+                        <div style="font-size: 56px; font-weight: 800; color: var(--light-grey); margin-bottom: 8px;">$0.38</div>
+                        <div style="font-size: 20px; color: var(--medium-grey); margin-bottom: 24px;">(38% probability)</div>
+                        <div style="background: var(--dark-grey); color: var(--light-grey); padding: 16px 32px; border-radius: 8px; font-size: 20px; font-weight: 700; cursor: pointer;">
+                            Buy No
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size: 18px; color: var(--light-grey); margin-bottom: 16px;"><strong>Order Book</strong></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <div style="font-size: 14px; color: var(--green); margin-bottom: 8px;">Bids (Yes)</div>
+                            <div style="font-size: 16px; padding: 8px 0; border-bottom: 1px solid var(--dark-grey);">$0.62 - 250 shares</div>
+                            <div style="font-size: 16px; padding: 8px 0;">$0.61 - 500 shares</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; color: var(--light-grey); margin-bottom: 8px;">Asks (No)</div>
+                            <div style="font-size: 16px; padding: 8px 0; border-bottom: 1px solid var(--dark-grey);">$0.38 - 180 shares</div>
+                            <div style="font-size: 16px; padding: 8px 0;">$0.39 - 320 shares</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--dark-grey); font-size: 16px; color: var(--medium-grey); text-align: center;">
+                    Volume: $12,450 | 24h Change: <span style="color: var(--green);">+5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Key Differentiators -->
+        <div class="slide" data-block="product">
+            <div class="slide-header">
+                <h2>What Makes LEVL Unique</h2>
+            </div>
+            <div class="pillars">
+                <div class="pillar">
+                    <h4>✓ SKILL VALIDATION</h4>
+                    <p>Challenge-based evaluation</p>
+                    <p>Structured performance metrics</p>
+                    <p>Proven capability testing</p>
+                    <div class="vs">vs. Sportsbooks: ❌ No validation</div>
+                </div>
+                <div class="pillar">
+                    <h4>✓ FAIR MARKETS</h4>
+                    <p>P2P, no bookmaker margins</p>
+                    <p>True market odds</p>
+                    <p>Transparent pricing</p>
+                    <div class="vs">vs. Sportsbooks: ❌ 5-10% margins</div>
+                </div>
+                <div class="pillar">
+                    <h4>✓ FUNDED OPPORTUNITY</h4>
+                    <p>$10K-50K demo capital</p>
+                    <p>80% profit share</p>
+                    <p>No own capital risk</p>
+                    <div class="vs">vs. Exchanges: ❌ No funding model</div>
+                </div>
+                <div class="pillar">
+                    <h4>✓ MODERN EXPERIENCE</h4>
+                    <p>Mobile-first design</p>
+                    <p>Real-time sports data</p>
+                    <p>Gamified progression</p>
+                    <p>Community features</p>
+                    <div class="vs">vs. Prop Firms: ❌ Desktop-heavy</div>
+                </div>
+            </div>
+            <div class="insight-box">
+                "The only platform where proving your skill unlocks capital to trade on fair markets—and you keep 80% of what you make."
+            </div>
+        </div>
+
+        <!-- BLOCK 3: THE BUSINESS -->
+
+        <!-- Slide 12: Revenue Model -->
+        <div class="slide" data-block="business">
+            <div class="slide-header">
+                <div class="slide-icon">💰</div>
+                <h2>Proven FTMO Economics, Sports Application</h2>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Primary Revenue: Challenge Fees (70-75%)</h3>
+                    <ul class="bullet">
+                        <li><strong>$99-199</strong> per challenge attempt</li>
+                        <li><strong>~75%</strong> failure rate (industry standard)</li>
+                        <li>Recurring attempts (users retry)</li>
+                    </ul>
+                    <div class="box box-green" style="margin-top: 24px;">
+                        <p style="font-size: 18px; color: var(--medium-grey); margin-bottom: 8px;">Example:</p>
+                        <p style="font-size: 20px;">1,000 users × 2.5 attempts × $99</p>
+                        <div class="stat-value" style="font-size: 42px; margin-top: 12px;">$250K</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Secondary Revenue: Profit Share (20-25%)</h3>
+                    <ul class="bullet">
+                        <li><strong>20%</strong> of funded trader profits</li>
+                        <li><strong>~25%</strong> of users reach funded status</li>
+                        <li>Recurring revenue from active traders</li>
+                    </ul>
+                    <div class="box box-green" style="margin-top: 24px;">
+                        <p style="font-size: 18px; color: var(--medium-grey); margin-bottom: 8px;">Example:</p>
+                        <p style="font-size: 20px;">250 funded × $500 avg profit × 20%</p>
+                        <div class="stat-value" style="font-size: 42px; margin-top: 12px;">$25K/mo</div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>FTMO (Trading)</th>
+                            <th>LEVL (Sports)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Challenge fee</td>
+                            <td>$150-500</td>
+                            <td>$99-199</td>
+                        </tr>
+                        <tr>
+                            <td>Pass rate</td>
+                            <td>~25%</td>
+                            <td>~25% (target)</td>
+                        </tr>
+                        <tr>
+                            <td>Profit share</td>
+                            <td>80-90% to trader</td>
+                            <td>80% to predictor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 13: Unit Economics -->
+        <div class="slide" data-block="business">
+            <div class="slide-header">
+                <div class="slide-icon">📈</div>
+                <h2>Path to Profitability</h2>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Assumptions (Conservative)</h3>
+                    <ul class="bullet">
+                        <li>CAC: <strong>$20</strong> (organic-first)</li>
+                        <li>Challenge fee: <strong>$99</strong></li>
+                        <li>Challenge pass rate: <strong>25%</strong></li>
+                        <li>Funded trader monthly profit: <strong>$500</strong></li>
+                        <li>Profit share to LEVL: <strong>20%</strong> = $100/mo</li>
+                        <li>Funded trader retention: <strong>80%</strong> MoM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Year 1 Cohort (1,000 users)</h3>
+                    <div class="stat">
+                        <div class="stat-label">Total CAC</div>
+                        <div class="stat-value" style="font-size: 40px;">$20,000</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Challenge Revenue</div>
+                        <div class="stat-value" style="font-size: 40px;">$247,500</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Year 1 LTV</div>
+                        <div class="stat-value" style="font-size: 40px;">$520,450</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">LTV:CAC Ratio</div>
+                        <div class="stat-value" style="font-size: 56px;">26:1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="insight-box" style="margin-top: 30px;">
+                "Cohort positive in Month 1 · Platform profitable at ~500 users"
+            </div>
+        </div>
+
+        <!-- Slide 14: GTM Strategy -->
+        <div class="slide" data-block="business">
+            <div class="slide-header">
+                <div class="slide-icon">🚀</div>
+                <h2>1,000 Users in 90 Days</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-month">Pre-Launch (Days -30 to 0)</div>
+                    <div class="timeline-content">
+                        • Community seeding (Reddit, Discord)<br/>
+                        • Content foundation (SEO, YouTube)<br/>
+                        • Influencer outreach (5-10 partnerships)<br/>
+                        <strong style="color: var(--green);">Goal: 200-300 waitlist</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Launch (Days 1-30)</div>
+                    <div class="timeline-content">
+                        • Product Hunt, Indie Hackers, Hacker News<br/>
+                        • Social media blitz (Twitter, Instagram)<br/>
+                        • Free opening challenges (limited spots)<br/>
+                        <strong style="color: var(--green);">Goal: 300 users</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Growth (Days 31-90)</div>
+                    <div class="timeline-content">
+                        • Referral program (viral mechanics)<br/>
+                        • Content marketing expansion<br/>
+                        • Targeted paid ads ($5-10K)<br/>
+                        • Affiliate partnerships<br/>
+                        <strong style="color: var(--green);">Goal: 1,000 users</strong>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Users</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Organic (Reddit, Discord, Content)</td><td>350</td><td>$0-1K</td></tr>
+                        <tr><td>Referrals</td><td>250</td><td>$2K</td></tr>
+                        <tr><td>Affiliates</td><td>150</td><td>$3-5K</td></tr>
+                        <tr><td>Paid ads</td><td>150</td><td>$5-10K</td></tr>
+                        <tr><td>Launch platforms</td><td>100</td><td>$0</td></tr>
+                        <tr style="border-top: 2px solid var(--green);"><td><strong>TOTAL</strong></td><td><strong>1,000</strong></td><td><strong>$11.5-19.5K</strong></td></tr>
+                    </tbody>
+                </table>
+                <div class="stat" style="margin-top: 24px;">
+                    <div class="stat-label">Target CAC</div>
+                    <div class="stat-value" style="font-size: 48px;">$12-20</div>
+                    <div class="stat-label" style="margin-top: 8px;">vs. industry $200-500</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Risk Analysis -->
+        <div class="slide" data-block="business">
+            <div class="slide-header">
+                <div class="slide-icon">⚠️</div>
+                <h2>Risks & Mitigation Strategies</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="color: var(--light-grey);">Financial Risks</h3>
+                    <div class="box" style="margin-top: 16px; border-left: 4px solid #FF4444;">
+                        <div style="font-size: 20px; color: #FF4444; margin-bottom: 12px;"><strong>🔴 Challenge pass rate too high (&gt;40%)</strong></div>
+                        <p style="font-size: 18px; margin-bottom: 12px;">Impact: Revenue model breaks</p>
+                        <p style="font-size: 16px; color: var(--medium-grey);">Mitigation: Dynamic difficulty adjustment, data-driven calibration, multiple tiers</p>
+                    </div>
+                    <div class="box" style="margin-top: 16px; border-left: 4px solid var(--yellow);">
+                        <div style="font-size: 20px; color: var(--yellow); margin-bottom: 12px;"><strong>🟡 CAC inflation (&gt;$50)</strong></div>
+                        <p style="font-size: 18px; margin-bottom: 12px;">Impact: Unit economics deteriorate</p>
+                        <p style="font-size: 16px; color: var(--medium-grey);">Mitigation: Organic-first strategy, referral program, community building</p>
+                    </div>
+                    <h3 style="color: var(--light-grey); margin-top: 32px;">Operational Risks</h3>
+                    <div class="box" style="margin-top: 16px; border-left: 4px solid #FF4444;">
+                        <div style="font-size: 20px; color: #FF4444; margin-bottom: 12px;"><strong>🔴 P2P liquidity issues</strong></div>
+                        <p style="font-size: 18px; margin-bottom: 12px;">Impact: Poor UX, users leave</p>
+                        <p style="font-size: 16px; color: var(--medium-grey);">Mitigation: LEVL as market maker initially, incentivize liquidity providers, start with high-volume markets</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--light-grey);">Regulatory Risks</h3>
+                    <div class="box" style="margin-top: 16px; border-left: 4px solid var(--yellow);">
+                        <div style="font-size: 20px; color: var(--yellow); margin-bottom: 12px;"><strong>🟡 Gambling classification</strong></div>
+                        <p style="font-size: 18px; margin-bottom: 12px;">Impact: Limited geographic reach</p>
+                        <p style="font-size: 16px; color: var(--medium-grey);">Mitigation: Demo capital model (skill evaluation), clear ToS, avoid restricted states, legal counsel</p>
+                    </div>
+                    <div class="box" style="margin-top: 16px; border-left: 4px solid var(--green);">
+                        <div style="font-size: 20px; color: var(--green); margin-bottom: 12px;"><strong>🟢 Market integrity</strong></div>
+                        <p style="font-size: 18px; margin-bottom: 12px;">Impact: Fraud, reputational damage</p>
+                        <p style="font-size: 16px; color: var(--medium-grey);">Mitigation: Volume limits, pattern detection, KYC/AML, leverage FTMO compliance</p>
+                    </div>
+                    <h3 style="color: var(--light-grey); margin-top: 32px;">Mitigation Summary</h3>
+                    <ul style="margin-top: 16px;">
+                        <li style="font-size: 18px;">Demo capital = regulatory safe zone</li>
+                        <li style="font-size: 18px;">FTMO infrastructure = compliance ready</li>
+                        <li style="font-size: 18px;">Data-driven optimization = economic balance</li>
+                        <li style="font-size: 18px;">Gradual rollout = learn & adapt</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK 4: THE BUILD -->
+
+        <!-- Slide 16: 6-Month Roadmap -->
+        <div class="slide" data-block="build">
+            <div class="slide-header">
+                <div class="slide-icon">📅</div>
+                <h2>From Idea to 1,000 Funded Traders</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 1-2: BUILD MVP</div>
+                    <div class="timeline-content">
+                        • Challenge system (demo capital)<br/>
+                        • Basic P2P markets (5-10 sports)<br/>
+                        • Sports data integration<br/>
+                        • User dashboard<br/>
+                        <strong style="color: var(--green);">Milestone: MVP ready, internal testing</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 3: BETA LAUNCH</div>
+                    <div class="timeline-content">
+                        • Invite 100 beta users (waitlist)<br/>
+                        • First challenges go live<br/>
+                        • Iteration based on feedback<br/>
+                        • Community Discord launch<br/>
+                        <strong style="color: var(--green);">Milestone: 100 users, first challenges completed</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 4: PRODUCT ITERATION</div>
+                    <div class="timeline-content">
+                        • V1.0 based on beta learnings<br/>
+                        • Enhanced markets, more sports<br/>
+                        • Referral program launch<br/>
+                        • Content marketing ramp-up<br/>
+                        <strong style="color: var(--green);">Milestone: Product-market fit signals</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 5: PUBLIC LAUNCH</div>
+                    <div class="timeline-content">
+                        • Full launch (Product Hunt, etc.)<br/>
+                        • Marketing campaigns live<br/>
+                        • Scale to 1,000 users<br/>
+                        • First funded accounts approved<br/>
+                        <strong style="color: var(--green);">Milestone: 1,000 users, 250 in challenges</strong>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 6: FUNDED PHASE</div>
+                    <div class="timeline-content">
+                        • Funded traders go live<br/>
+                        • P2P markets active trading<br/>
+                        • First profit share payouts<br/>
+                        • Community growth (leaderboards, events)<br/>
+                        <strong style="color: var(--green);">Milestone: 250 funded traders, revenue positive</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Team Structure -->
+        <div class="slide" data-block="build">
+            <div class="slide-header">
+                <div class="slide-icon">👥</div>
+                <h2>Building the Right Team</h2>
+            </div>
+            <div class="three-column">
+                <div class="box box-green">
+                    <h3 style="font-size: 22px; margin-bottom: 16px;">Founding Team<br/>(Month 0-1)</h3>
+                    <ul class="bullet" style="font-size: 18px;">
+                        <li>Product Manager</li>
+                        <li>Tech Lead / CTO</li>
+                        <li>Leverage FTMO:<br/>Compliance, Finance, Infrastructure</li>
+                    </ul>
+                </div>
+                <div class="box box-green">
+                    <h3 style="font-size: 22px; margin-bottom: 16px;">Phase 1 Team<br/>(Month 1-3)</h3>
+                    <ul class="bullet" style="font-size: 18px;">
+                        <li>PM + Tech Lead</li>
+                        <li>+2 Engineers (FE, BE)</li>
+                        <li>+1 Designer (UI/UX)</li>
+                        <li>+1 Growth Lead</li>
+                    </ul>
+                    <div class="stat" style="margin-top: 16px;">
+                        <div class="stat-value" style="font-size: 42px;">6</div>
+                        <div class="stat-label">people</div>
+                    </div>
+                </div>
+                <div class="box box-green">
+                    <h3 style="font-size: 22px; margin-bottom: 16px;">Phase 2 Team<br/>(Month 4-6)</h3>
+                    <ul class="bullet" style="font-size: 18px;">
+                        <li>Core team (6)</li>
+                        <li>+2 Engineers (Mobile, Data)</li>
+                        <li>+1 Community Manager</li>
+                        <li>+1 Data Analyst</li>
+                    </ul>
+                    <div class="stat" style="margin-top: 16px;">
+                        <div class="stat-value" style="font-size: 42px;">10</div>
+                        <div class="stat-label">people</div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <h3>Key Roles & Responsibilities</h3>
+                <table style="margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Responsibilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PM</td><td>Vision, roadmap, coordination</td></tr>
+                        <tr><td>Tech Lead</td><td>Architecture, infrastructure</td></tr>
+                        <tr><td>Engineers</td><td>Frontend (React Native), Backend (Node.js), Data pipeline</td></tr>
+                        <tr><td>Designer</td><td>UI/UX, brand consistency</td></tr>
+                        <tr><td>Growth</td><td>Marketing, partnerships, content</td></tr>
+                        <tr><td>Community</td><td>Discord, engagement, support</td></tr>
+                        <tr><td>Data Analyst</td><td>Metrics, optimization, fraud detection</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 18: Key Milestones & Metrics -->
+        <div class="slide" data-block="build">
+            <div class="slide-header">
+                <div class="slide-icon">🎯</div>
+                <h2>How We Measure Success</h2>
+            </div>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="font-size: 36px; margin-bottom: 16px;">North Star Metric</h3>
+                <div class="stat">
+                    <div class="stat-value" style="font-size: 64px;">Active Funded Traders</div>
+                    <div class="stat-label" style="font-size: 20px;">(trading on P2P markets monthly)</div>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Key Milestones</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Milestone</th>
+                                <th>Target</th>
+                                <th>Month</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>MVP ready</td><td>Testing complete</td><td>2</td></tr>
+                            <tr><td>Beta launch</td><td>100 users</td><td>3</td></tr>
+                            <tr><td>Challenges passed</td><td>25 funded</td><td>3</td></tr>
+                            <tr><td>Product-market fit</td><td>NPS &gt;40</td><td>4</td></tr>
+                            <tr><td>Public launch</td><td>1,000 users</td><td>5</td></tr>
+                            <tr><td>Revenue positive</td><td>LTV &gt; CAC</td><td>6</td></tr>
+                            <tr><td>Profit share paid</td><td>250 funded</td><td>6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Success Metrics (Month 6)</h3>
+                    <div class="box box-green" style="margin-bottom: 16px;">
+                        <h4 style="color: var(--green); font-size: 18px; margin-bottom: 12px;">Acquisition</h4>
+                        <p style="font-size: 16px;">Total users: <strong>1,000</strong></p>
+                        <p style="font-size: 16px;">CAC: <strong>&lt;$20</strong></p>
+                    </div>
+                    <div class="box box-green" style="margin-bottom: 16px;">
+                        <h4 style="color: var(--green); font-size: 18px; margin-bottom: 12px;">Activation</h4>
+                        <p style="font-size: 16px;">Challenge start: <strong>&gt;80%</strong></p>
+                        <p style="font-size: 16px;">Completion: <strong>&gt;60%</strong></p>
+                    </div>
+                    <div class="box box-green" style="margin-bottom: 16px;">
+                        <h4 style="color: var(--green); font-size: 18px; margin-bottom: 12px;">Retention</h4>
+                        <p style="font-size: 16px;">2nd challenge: <strong>&gt;40%</strong></p>
+                        <p style="font-size: 16px;">Funded activity: <strong>&gt;80%</strong></p>
+                    </div>
+                    <div class="box box-green">
+                        <h4 style="color: var(--green); font-size: 18px; margin-bottom: 12px;">Revenue</h4>
+                        <p style="font-size: 16px;">LTV:CAC: <strong>&gt;20:1</strong></p>
+                        <p style="font-size: 16px;">ARPU: <strong>&gt;$150</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Why LEVL Wins -->
+        <div class="slide" data-block="build">
+            <div class="slide-header">
+                <h2>LEVL's Competitive Moat</h2>
+            </div>
+            <div style="text-align: center; margin: 40px 0;">
+                <div style="font-size: 96px; margin-bottom: 40px;">
+                    <div class="logo-text">LEVL</div>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 60px; margin-bottom: 40px;">
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px;">Challenge<br/>Validation</h3>
+                        <p style="font-size: 18px; margin-top: 16px; color: var(--medium-grey);">(FTMO)</p>
+                    </div>
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px;">P2P<br/>Markets</h3>
+                        <p style="font-size: 18px; margin-top: 16px; color: var(--medium-grey);">(Polymarket)</p>
+                    </div>
+                    <div class="box box-green" style="flex: 1; max-width: 280px;">
+                        <h3 style="font-size: 24px;">Sports<br/>UX</h3>
+                        <p style="font-size: 18px; margin-top: 16px; color: var(--medium-grey);">(Flashscore)</p>
+                    </div>
+                </div>
+                <div style="font-size: 48px; color: var(--yellow); margin: 30px 0;">↓</div>
+                <div class="box box-yellow" style="max-width: 700px; margin: 0 auto;">
+                    <h3 style="color: var(--light-grey); font-size: 24px; margin-bottom: 16px;">Built on FTMO Infrastructure</h3>
+                    <p style="font-size: 18px; color: var(--medium-grey);">Compliance · Technology · Operational Know-How · Capital</p>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 24px;">Why LEVL Wins</h3>
+                <div class="two-column">
+                    <ul>
+                        <li>Proven Model (FTMO $7B revenue)</li>
+                        <li>Fair Markets (P2P, no bookmaker edge)</li>
+                        <li>Modern Experience (Gen Z/Millennial target)</li>
+                    </ul>
+                    <ul>
+                        <li>FTMO Foundation (infrastructure ready)</li>
+                        <li>Separate Brand (protects FTMO)</li>
+                        <li>First Mover (unique combination)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Q&A -->
+        <div class="slide" data-block="qa">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-bars" style="width: 100px; height: 100px;">
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                        <div class="logo-bar"></div>
+                    </div>
+                    <div class="logo-text">LEVL</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 80px;">
+                <h1 style="font-size: 72px; margin-bottom: 40px;">Questions?</h1>
+                <div class="insight-box" style="max-width: 900px; margin: 60px auto;">
+                    "FTMO has the expertise, infrastructure, and capital to build this. LEVL is the perfect next venture—proven model, massive market, clear differentiation. Let's level up sports prediction markets."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation indicators -->
+    <div class="block-indicator"></div>
+    <div class="slide-number"></div>
+    <div class="nav-indicator"></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const navIndicator = document.querySelector('.nav-indicator');
+        const slideNumber = document.querySelector('.slide-number');
+        const blockIndicator = document.querySelector('.block-indicator');
+
+        // Create navigation dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            navIndicator.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                }
+            });
+
+            slideNumber.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+            // Update block indicator
+            const block = slides[currentSlide].dataset.block;
+            const blockNames = {
+                'intro': 'Introduction',
+                'opportunity': '📍 Block 1: The Opportunity',
+                'product': '🎨 Block 2: The Product & Brand',
+                'business': '📊 Block 3: The Business',
+                'build': '🚀 Block 4: The Build',
+                'qa': 'Q&A'
+            };
+            blockIndicator.textContent = blockNames[block] || '';
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                goToSlide(totalSlides - 1);
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>
