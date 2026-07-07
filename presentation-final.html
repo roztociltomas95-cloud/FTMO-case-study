@@ -353,16 +353,18 @@
 
         .map-axis-x {
             width: 100%;
-            height: 1px;
+            height: 2px;
             top: 50%;
             left: 0;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .map-axis-y {
-            width: 1px;
+            width: 2px;
             height: 100%;
             left: 50%;
             top: 0;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .map-label {
@@ -394,20 +396,66 @@
             text-shadow: 0 0 20px var(--green-glow);
         }
 
-        .map-point.prediction-markets {
-            color: var(--medium-grey);
-            left: 70%;
-            top: 50%;
-            text-align: center;
-            line-height: 1.4;
+        .map-point.competitor {
+            transform: none;
         }
 
-        .map-point.bookmakers {
-            color: var(--medium-grey);
-            left: 30%;
-            top: 75%;
-            text-align: center;
-            line-height: 1.4;
+        .point-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--yellow);
+            box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .point-label {
+            position: absolute;
+            left: 24px;
+            top: -6px;
+            font-size: 14px;
+            color: var(--light-grey);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .point-label::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 8px;
+            width: 14px;
+            height: 1px;
+            background: rgba(251, 191, 36, 0.4);
+        }
+
+        /* Prediction Markets */
+        .map-point.kalshi {
+            left: 68%;
+            top: 48%;
+        }
+
+        .map-point.polymarket {
+            left: 72%;
+            top: 52%;
+        }
+
+        /* Traditional Bookmakers */
+        .map-point.fanduel {
+            left: 28%;
+            top: 70%;
+        }
+
+        .map-point.draftkings {
+            left: 32%;
+            top: 78%;
+        }
+
+        .map-point.betmgm {
+            left: 24%;
+            top: 74%;
         }
 
         .timeline {
@@ -1629,7 +1677,8 @@
     <nav class="top-nav">
         <div class="nav-title">Build the Future of Sports Prediction Markets</div>
         <div class="section-links">
-            <a href="#" class="section-link active" data-section="product-market">Product & Market</a>
+            <a href="#" class="section-link active" data-section="intro">Intro</a>
+            <a href="#" class="section-link" data-section="product-market">Product & Market</a>
             <a href="#" class="section-link" data-section="business">Business</a>
             <a href="#" class="section-link" data-section="team">Team</a>
             <a href="#" class="section-link" data-section="discussion">Discussion</a>
@@ -1637,8 +1686,8 @@
     </nav>
 
     <div class="presentation">
-        <!-- Section 1: Product & Market -->
-        <div class="section active" id="product-market">
+        <!-- Section 1: Intro -->
+        <div class="section active" id="intro">
             <!-- Intro Slide -->
             <div class="slide-content">
                 <!-- Intro Header -->
@@ -1686,8 +1735,11 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Slide 2: Market Analysis -->
+        <!-- Section 2: Product & Market -->
+        <div class="section" id="product-market">
+            <!-- Slide 1: Market Analysis -->
             <div class="slide-content">
                 <h2>Market Opportunity</h2>
                 <p style="text-align: left; font-size: 16px; color: var(--medium-grey); margin-bottom: 24px;">
@@ -1736,8 +1788,30 @@
                     <div class="map-label left">House Edge</div>
                     <div class="map-label right">Pure Skill (P2P)</div>
                     <div class="map-point levl">★ LEVL</div>
-                    <div class="map-point prediction-markets">Kalshi<br>Polymarket</div>
-                    <div class="map-point bookmakers">FanDuel<br>DraftKings<br>BetMGM</div>
+
+                    <!-- Prediction Markets -->
+                    <div class="map-point competitor kalshi">
+                        <div class="point-dot"></div>
+                        <div class="point-label">Kalshi</div>
+                    </div>
+                    <div class="map-point competitor polymarket">
+                        <div class="point-dot"></div>
+                        <div class="point-label">Polymarket</div>
+                    </div>
+
+                    <!-- Traditional Bookmakers -->
+                    <div class="map-point competitor fanduel">
+                        <div class="point-dot"></div>
+                        <div class="point-label">FanDuel</div>
+                    </div>
+                    <div class="map-point competitor draftkings">
+                        <div class="point-dot"></div>
+                        <div class="point-label">DraftKings</div>
+                    </div>
+                    <div class="map-point competitor betmgm">
+                        <div class="point-dot"></div>
+                        <div class="point-label">BetMGM</div>
+                    </div>
                 </div>
                 <div class="insight-box">
                     First sports-only P2P market with funded accounts - skill validation meets unlimited profit potential
@@ -3042,97 +3116,130 @@
             </div>
         </div>
 
-        <!-- Section 2: Business -->
+        <!-- Section 3: Business -->
         <div class="section" id="business">
-            <!-- Slide 8: Business Model -->
+            <!-- Slide 1: LEVL Prop Model -->
             <div class="slide-content">
-                <h2>Business Model: Prop Model for Sports</h2>
-                <div style="text-align: center; margin: 32px 0;">
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 24px; margin: 32px 0;">
-                        <div style="flex: 1; max-width: 200px; text-align: center;">
-                            <div class="box box-green">
-                                <h3 style="font-size: 20px;">FTMO Prop Model</h3>
-                                <p style="font-size: 14px; margin-top: 10px;">Challenge-based skill evaluation</p>
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; gap: 40px;">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 32px;">
+                        <div style="width: 240px;">
+                            <div class="box box-green" style="text-align: center;">
+                                <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">FTMO Prop Model</h3>
+                                <p style="font-size: 15px; color: var(--light-grey);">Challenge-based skill evaluation</p>
                             </div>
                         </div>
-                        <div style="font-size: 40px; color: var(--yellow);">+</div>
-                        <div style="flex: 1; max-width: 200px; text-align: center;">
-                            <div class="box box-green">
-                                <h3 style="font-size: 20px;">Polymarket P2P</h3>
-                                <p style="font-size: 14px; margin-top: 10px;">Fair market pricing</p>
+                        <div style="font-size: 48px; color: var(--yellow); font-weight: 300;">+</div>
+                        <div style="width: 240px;">
+                            <div class="box box-green" style="text-align: center;">
+                                <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Polymarket P2P</h3>
+                                <p style="font-size: 15px; color: var(--light-grey);">Fair market pricing</p>
                             </div>
                         </div>
-                        <div style="font-size: 40px; color: var(--yellow);">+</div>
-                        <div style="flex: 1; max-width: 200px; text-align: center;">
-                            <div class="box box-green">
-                                <h3 style="font-size: 20px;">Sports Focus</h3>
-                                <p style="font-size: 14px; margin-top: 10px;">$100B+ market</p>
+                        <div style="font-size: 48px; color: var(--yellow); font-weight: 300;">+</div>
+                        <div style="width: 240px;">
+                            <div class="box box-green" style="text-align: center;">
+                                <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Sports Focus</h3>
+                                <p style="font-size: 15px; color: var(--light-grey);">$100B+ market</p>
                             </div>
                         </div>
                     </div>
-                    <div style="font-size: 48px; color: var(--yellow); margin: 24px 0;">↓</div>
-                    <div class="box box-yellow" style="max-width: 700px; margin: 0 auto;">
-                        <h2 style="color: var(--light-grey); margin-bottom: 16px; font-size: 32px;">LEVL Prop Model</h2>
-                        <p style="font-size: 18px; line-height: 1.6;">
-                            Users prove their sports prediction skills through structured challenges.
-                            Successful participants get funded demo accounts to trade on P2P markets.
-                            LEVL shares profits with skilled predictors.
+                    <div style="font-size: 56px; color: var(--yellow); line-height: 1;">↓</div>
+                    <div class="box box-yellow" style="max-width: 800px; text-align: center; padding: 40px;">
+                        <h2 style="color: var(--light-grey); margin-bottom: 20px; font-size: 36px; font-weight: 800;">LEVL Prop Model</h2>
+                        <p style="font-size: 17px; line-height: 1.7; color: var(--light-grey);">
+                            Users prove their sports prediction skills through structured challenges.<br/>
+                            Successful participants get funded demo accounts to trade on P2P<br/>
+                            markets. LEVL shares profits with skilled predictors.
                         </p>
                     </div>
                 </div>
-                <div style="margin-top: 32px;">
-                    <h3>How It Works</h3>
-                    <ol style="list-style: decimal; padding-left: 52px; font-size: 20px; line-height: 1.7;">
-                        <li><strong>Challenge Phase:</strong> User pays $99, gets demo capital, must hit profit target</li>
-                        <li><strong>Verification:</strong> Second challenge validates consistency</li>
-                        <li><strong>Funded Account:</strong> Access to $10K-50K demo capital for P2P markets</li>
-                        <li><strong>Profit Share:</strong> User keeps 80%, LEVL takes 20%</li>
-                    </ol>
+            </div>
+
+            <!-- Slide 2: Revenue Streams -->
+            <div class="slide-content">
+                <h2>Revenue Streams</h2>
+                <div class="two-column" style="gap: 32px; margin-top: 24px;">
+                    <div>
+                        <div class="box box-green">
+                            <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--yellow);">Primary: Challenge Fees (~70%)</h3>
+                            <ul style="font-size: 17px; line-height: 2; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 12px;"><span style="color: var(--green);">●</span> <strong>$99-199</strong> per challenge attempt</li>
+                                <li style="margin-bottom: 12px;"><span style="color: var(--green);">●</span> <strong>~75%</strong> fail rate (industry standard)</li>
+                                <li><span style="color: var(--green);">●</span> Users retry multiple times</li>
+                            </ul>
+                            <div style="margin-top: 24px; padding: 20px; background: rgba(0, 255, 136, 0.08); border-radius: 12px; border: 1px solid rgba(0, 255, 136, 0.1);">
+                                <p style="font-size: 15px; color: var(--medium-grey); margin-bottom: 8px;">Example: 1,000 users</p>
+                                <p style="font-size: 17px; margin-top: 8px; color: var(--light-grey);">1,000 × 2.5 attempts × $99</p>
+                                <div class="stat-value" style="font-size: 42px; margin-top: 12px;">$247K</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="box box-green">
+                            <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--yellow);">Secondary: Profit Share (~30%)</h3>
+                            <ul style="font-size: 17px; line-height: 2; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 12px;"><span style="color: var(--green);">●</span> <strong>20%</strong> of funded trader profits</li>
+                                <li style="margin-bottom: 12px;"><span style="color: var(--green);">●</span> <strong>~25%</strong> reach funded status</li>
+                                <li><span style="color: var(--green);">●</span> Recurring monthly revenue</li>
+                            </ul>
+                            <div style="margin-top: 24px; padding: 20px; background: rgba(0, 255, 136, 0.08); border-radius: 12px; border: 1px solid rgba(0, 255, 136, 0.1);">
+                                <p style="font-size: 15px; color: var(--medium-grey); margin-bottom: 8px;">Example: 250 funded traders</p>
+                                <p style="font-size: 17px; margin-top: 8px; color: var(--light-grey);">250 × $500 profit × 20%</p>
+                                <div class="stat-value" style="font-size: 42px; margin-top: 12px;">$25K/mo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="insight-box" style="margin-top: 28px;">
+                    Challenge fees cover costs, profit share = recurring revenue
                 </div>
             </div>
 
-            <!-- Slide 9: Revenue Model -->
+            <!-- Slide 3: How It Works -->
             <div class="slide-content">
-                <h2>Revenue Streams</h2>
-                <div class="two-column">
-                    <div>
-                        <div class="box box-green">
-                            <h3 style="font-size: 24px; margin-bottom: 16px;">Primary: Challenge Fees (~70%)</h3>
-                            <ul style="font-size: 18px;">
-                                <li><strong>$99-199</strong> per challenge attempt</li>
-                                <li><strong>~75%</strong> fail rate (industry standard)</li>
-                                <li>Users retry multiple times</li>
-                            </ul>
-                            <div style="margin-top: 20px; padding: 16px; background: rgba(0, 255, 136, 0.08); border-radius: 12px;">
-                                <p style="font-size: 16px; color: var(--medium-grey);">Example: 1,000 users</p>
-                                <p style="font-size: 18px; margin-top: 6px;">1,000 × 2.5 attempts × $99</p>
-                                <div class="stat-value" style="font-size: 36px; margin-top: 10px;">$247K</div>
-                            </div>
+                <h2 style="margin-bottom: 40px;">How It Works</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto;">
+                    <div class="box box-green" style="position: relative;">
+                        <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: var(--dark-bg);">1</div>
+                        <div style="padding-left: 48px;">
+                            <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Challenge Phase</h3>
+                            <p style="font-size: 16px; line-height: 1.6; color: var(--light-grey);">
+                                User pays <strong>$99</strong>, gets demo capital, must hit profit target
+                            </p>
                         </div>
                     </div>
-                    <div>
-                        <div class="box box-green">
-                            <h3 style="font-size: 24px; margin-bottom: 16px;">Secondary: Profit Share (~30%)</h3>
-                            <ul style="font-size: 18px;">
-                                <li><strong>20%</strong> of funded trader profits</li>
-                                <li><strong>~25%</strong> reach funded status</li>
-                                <li>Recurring monthly revenue</li>
-                            </ul>
-                            <div style="margin-top: 20px; padding: 16px; background: rgba(0, 255, 136, 0.08); border-radius: 12px;">
-                                <p style="font-size: 16px; color: var(--medium-grey);">Example: 250 funded traders</p>
-                                <p style="font-size: 18px; margin-top: 6px;">250 × $500 profit × 20%</p>
-                                <div class="stat-value" style="font-size: 36px; margin-top: 10px;">$25K/mo</div>
-                            </div>
+                    <div class="box box-green" style="position: relative;">
+                        <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: var(--dark-bg);">2</div>
+                        <div style="padding-left: 48px;">
+                            <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Verification</h3>
+                            <p style="font-size: 16px; line-height: 1.6; color: var(--light-grey);">
+                                Second challenge validates consistency
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="insight-box" style="margin-top: 32px;">
-                    FTMO-proven model: Challenge fees cover costs, profit share = recurring revenue
+                    <div class="box box-green" style="position: relative;">
+                        <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: var(--dark-bg);">3</div>
+                        <div style="padding-left: 48px;">
+                            <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Funded Account</h3>
+                            <p style="font-size: 16px; line-height: 1.6; color: var(--light-grey);">
+                                Access to <strong>$10K-50K</strong> demo capital for P2P markets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box box-green" style="position: relative;">
+                        <div style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: var(--dark-bg);">4</div>
+                        <div style="padding-left: 48px;">
+                            <h3 style="font-size: 22px; color: var(--yellow); margin-bottom: 12px;">Profit Share</h3>
+                            <p style="font-size: 16px; line-height: 1.6; color: var(--light-grey);">
+                                User keeps <strong>80%</strong>, LEVL takes <strong>20%</strong>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 3: Team -->
+        <!-- Section 4: Team -->
         <div class="section" id="team">
             <!-- Slide 10: Team Structure -->
             <div class="slide-content">
@@ -3225,7 +3332,7 @@
             </div>
         </div>
 
-        <!-- Section 4: Discussion -->
+        <!-- Section 5: Discussion -->
         <div class="section" id="discussion">
             <div class="slide-content">
                 <div style="text-align: center; padding: 100px 0;">
