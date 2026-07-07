@@ -251,7 +251,10 @@
         }
 
         .stat {
-            margin: 12px 0;
+            margin: 16px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
         }
 
         .stat-value {
@@ -263,13 +266,15 @@
             background-clip: text;
             font-family: 'Inter', monospace;
             letter-spacing: -1px;
+            min-width: 140px;
+            flex-shrink: 0;
         }
 
         .stat-label {
             font-size: 14px;
             color: var(--medium-grey);
-            margin-top: 4px;
             font-weight: 500;
+            line-height: 1.4;
         }
 
         ul {
@@ -279,18 +284,21 @@
 
         li {
             font-size: 15px;
-            padding: 7px 0;
-            padding-left: 24px;
+            padding: 8px 0;
+            padding-left: 28px;
             position: relative;
+            line-height: 1.5;
         }
 
         li::before {
             content: "•";
             position: absolute;
             left: 0;
+            top: 8px;
             color: var(--green);
             font-weight: bold;
-            font-size: 28px;
+            font-size: 20px;
+            line-height: 1;
         }
 
         li.check::before {
@@ -1492,11 +1500,11 @@
         /* Why Me Section */
         .why-me-section {
             display: grid;
-            grid-template-columns: 1fr 240px;
-            gap: 32px;
-            max-width: 1100px;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 24px;
+            padding: 32px;
             background: rgba(28, 28, 36, 0.6);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1529,44 +1537,44 @@
 
         .why-me-content h3 {
             color: var(--yellow);
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             letter-spacing: 1px;
         }
 
         .why-me-content p {
             color: var(--light-grey);
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 15px;
+            line-height: 1.6;
             margin-bottom: 16px;
         }
 
         .why-me-highlights {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .why-me-highlight {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
+            gap: 12px;
+            padding: 12px 16px;
             background: rgba(0, 255, 136, 0.05);
             border-left: 3px solid var(--green);
             border-radius: 6px;
         }
 
         .why-me-highlight-icon {
-            font-size: 18px;
+            font-size: 20px;
             flex-shrink: 0;
         }
 
         .why-me-highlight-text {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--light-grey);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .why-me-highlight-text strong {
@@ -1574,12 +1582,19 @@
             font-weight: 600;
         }
 
+        .why-me-photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
         .why-me-photo {
-            width: 240px;
-            height: 240px;
+            width: 280px;
+            height: 280px;
             border-radius: 12px;
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(26, 107, 255, 0.1));
-            border: 2px solid rgba(0, 255, 136, 0.2);
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+            border: 3px solid var(--yellow);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1587,6 +1602,14 @@
             color: var(--medium-grey);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2);
+        }
+
+        .why-me-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--light-grey);
+            text-align: center;
         }
 
         .why-me-photo img {
@@ -1631,7 +1654,10 @@
                     <div class="why-me-content">
                         <h3>WHY ME?</h3>
                         <p>
-                            Product Manager with <strong>přes 4 roky at Livesport</strong>, managing Flashscore - a global sports platform with <strong>110M users worldwide</strong>. Deep understanding of sports products, user behavior, and what drives engagement in the competitive sports tech landscape.
+                            Product Manager with <strong>4+ years at Livesport</strong>, managing Flashscore - a global sports platform with <strong>110M users worldwide</strong>. Deep understanding of sports products, user behavior, and what drives engagement in the competitive sports tech landscape.
+                        </p>
+                        <p style="font-size: 13px; margin-top: 12px; color: var(--medium-grey);">
+                            Lifelong sports enthusiast - played football for years, train boxing, and follow multiple sports closely. This genuine passion drives my product intuition and user understanding.
                         </p>
                         <div class="why-me-highlights">
                             <div class="why-me-highlight">
@@ -1654,8 +1680,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="why-me-photo">
-                        <img src="me.png" alt="Tomáš Roztočil">
+                    <div class="why-me-photo-container">
+                        <div class="why-me-photo">
+                            <img src="me.png" alt="Tomáš Roztočil">
+                        </div>
+                        <div class="why-me-name">Tomáš Roztočil</div>
                     </div>
                 </div>
             </div>
@@ -1663,9 +1692,12 @@
             <!-- Slide 2: Market Analysis -->
             <div class="slide-content">
                 <h2>Market Opportunity</h2>
+                <p style="text-align: left; font-size: 16px; color: var(--medium-grey); margin-bottom: 24px;">
+                    Global online sports betting & prediction markets industry
+                </p>
                 <div class="two-column">
                     <div>
-                        <h3>Market Size & Growth</h3>
+                        <h3 style="color: var(--yellow);">Market Size & Growth</h3>
                         <div class="stat">
                             <div class="stat-value">$100.9B</div>
                             <div class="stat-label">Current Market (2024)</div>
@@ -1680,13 +1712,13 @@
                         </div>
                     </div>
                     <div>
-                        <h3>Key Market Trends</h3>
+                        <h3 style="color: var(--yellow);">Key Market Trends</h3>
                         <ul>
                             <li><strong>Mobile-first:</strong> 84-90% of bets via mobile</li>
                             <li><strong>Gen Z/Millennials:</strong> 76% market share</li>
-                            <li><strong>Legalization:</strong> 37 US states + EU expansion</li>
-                            <li><strong>P2P markets:</strong> Polymarket $3B+ volume</li>
-                            <li><strong>Kalshi sports:</strong> 85% of total volume</li>
+                            <li><strong>US Legalization:</strong> 37 states live, more expanding</li>
+                            <li><strong>P2P Growth:</strong> Polymarket hits $3B+ volume</li>
+                            <li><strong>Sports Dominance:</strong> 85% of Kalshi volume</li>
                         </ul>
                     </div>
                 </div>
@@ -1898,7 +1930,7 @@
                             <div class="mockup-preview-label">DESKTOP EXPERIENCE</div>
                             <div class="mockup-preview-title">Full Platform</div>
                             <div class="mockup-preview-description">
-                                Pohodlné, plnohodnotné prostředí pro detailní analýzy a pokročilé strategie. Velký prostor pro srovnávání odds a sledování více zápasů najednou.
+                                Comfortable, full-featured environment for detailed analysis and advanced strategies. Large workspace for comparing odds and monitoring multiple matches simultaneously.
                             </div>
                             <button class="mockup-cta-button" data-mockup="desktop">View Desktop</button>
                         </div>
@@ -1968,7 +2000,7 @@
                             <div class="mockup-preview-label">MOBILE EXPERIENCE</div>
                             <div class="mockup-preview-title">On-the-Go</div>
                             <div class="mockup-preview-description">
-                                Optimized mobile app with quick access to live matches, streamlined betting, and intuitive navigation. App notifications tě udrží informovaného o všem důležitém.
+                                Optimized mobile app with quick access to live matches, streamlined betting, and intuitive navigation. App notifications keep you informed about everything important.
                             </div>
                             <button class="mockup-cta-button" data-mockup="mobile">View Mobile App</button>
                         </div>
