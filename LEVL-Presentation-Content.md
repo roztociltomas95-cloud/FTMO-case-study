@@ -603,6 +603,13 @@ Level 1          Level 2          Level 3          Funded         Pro
 - Impact: Settlement disputes, trust issues
 - Mitigation: Multi-source verification, established providers (Opta, Stats Perform), manual override process
 
+**Speaker Notes - Sports Data Costs:**
+- FTMO has identified sports data providers for launch
+- Estimated costs: €20-40K/month for tier-1 providers (Opta, Stats Perform) covering 3 sports
+- Alternative lower-cost options available for MVP phase
+- Data costs already factored into FTMO's infrastructure budget
+- May be topic for discussion - be prepared to discuss provider selection and cost optimization strategies
+
 **Regulatory Risks:**
 
 🟡 **Gambling classification** (restrictive jurisdictions)
