@@ -53,9 +53,9 @@
 **Content:**
 
 **Sports Betting Market**
-- Current: **$100.9B** (2024)
-- Projected: **$187.4B** (2030)
-- CAGR: **11%**
+- Current: **$112B** (2025)
+- Projected: **$200B+** (2030)
+- CAGR: **12%**
 
 **Key Trends**
 - ✅ Mobile-first: **84-90%** of bets via mobile
@@ -68,7 +68,7 @@
 - Numbers in yellow
 
 **Speaker Notes:**
-- $100B+ market growing at 11% annually
+- $112B market growing at 12% annually to $200B+ by 2030
 - Younger demographics dominating (our sweet spot)
 - Mobile-first behavior aligns with our product strategy
 - Prediction markets gaining mainstream traction (Polymarket $3B+ volume)
@@ -121,7 +121,7 @@ FEES                    │                    FEES
 
 **Icon:** 🎯 Target
 
-**Headline:** Meet Analytical Alex
+**Headline:** Target Market - Primary: Analytical Alex
 
 **Left Column: Photo/Illustration + Demographics**
 - Age: **25-35**
@@ -150,10 +150,10 @@ FEES                    │                    FEES
 ✅ Community recognition
 
 **Speaker Notes:**
-- Primary persona: serious bettor, frustrated with current options
-- Secondary: Crypto Chris (P2P markets enthusiast)
-- Tertiary: Social Sam (Gen Z, casual but growing)
+- Primary persona presented in slide: Analytical Alex - serious bettor, frustrated with current options
+- (Secondary personas Crypto Chris and Social Sam exist in research but not shown in main presentation)
 - Alex has highest LTV, most aligned with challenge model
+- Focus on one clear persona for presentation clarity
 
 ---
 
@@ -170,8 +170,8 @@ FEES                    │                    FEES
 │  FTMO Model     │  │ Prediction      │
 │  Proven         │  │ Markets Surge   │
 │                 │  │                 │
-│  $7B revenue    │  │ Polymarket $3B+ │
-│  2.4B EBITDA    │  │ Kalshi 85%      │
+│  $500M+ annual  │  │ Polymarket $3B+ │
+│  revenue        │  │ Kalshi 85%      │
 └─────────────────┘  └─────────────────┘
 
 ┌─────────────────┐  ┌─────────────────┐
@@ -187,7 +187,7 @@ FEES                    │                    FEES
 > **"FTMO's challenge model + Prediction markets' P2P mechanics + Sports betting's growth = LEVL"**
 
 **Speaker Notes:**
-- FTMO validated prop model works ($7B revenue, 2.4B EBITDA)
+- FTMO validated prop model works ($500M+ annual revenue)
 - Prediction markets proven (Polymarket, Kalshi)
 - Sports betting regulatory tailwinds
 - Technology ready (Flashscore-like data, blockchain P2P)
@@ -292,7 +292,7 @@ FEES                    │                    FEES
    ▼                  ▼                  ▼                 ▼                ▼
 Landing Page     Phase 1:           Phase 2:         Access P2P      Community
 Sign up          30 days            30 days          Markets         Leaderboards
-$99 fee          10% profit         5% profit        $10K-50K        Share strategies
+€99 fee          10% profit         5% profit        $10K-50K        Share strategies
                  Max 10% DD         Max 10% DD       capital
                                                      80% profit
                                                      share
@@ -461,7 +461,7 @@ Level 1          Level 2          Level 3          Funded         Pro
 **Revenue Streams:**
 
 **1. Challenge Fees** (Primary - 70-75% of revenue)
-- $99-199 per challenge attempt
+- €99 per challenge attempt
 - ~75% failure rate (industry standard)
 - Recurring attempts (users retry)
 - Example: 1,000 users, 2.5 attempts avg = $250K
@@ -479,12 +479,12 @@ Level 1          Level 2          Level 3          Funded         Pro
 **Model Comparison:**
 | Metric | FTMO (Trading) | LEVL (Sports) |
 |--------|----------------|---------------|
-| Challenge fee | $150-500 | $99-199 |
+| Challenge fee | $150-500 | €99 |
 | Pass rate | ~25% | ~25% (target) |
 | Profit share | 80-90% to trader | 80% to predictor |
 
 **Speaker Notes:**
-- Proven model: FTMO generates $7B revenue
+- Proven model: FTMO generates $500M+ annual revenue
 - Challenge fees = primary revenue (most users fail)
 - Profit share = recurring revenue from successful users
 - Sports application: Lower entry price, higher volume potential
@@ -499,7 +499,7 @@ Level 1          Level 2          Level 3          Funded         Pro
 
 **Assumptions (Conservative):**
 - CAC: **$20** (organic-first strategy)
-- Challenge fee: **$99**
+- Challenge fee: **€99**
 - Challenge pass rate: **25%**
 - Funded trader monthly profit: **$500** (avg)
 - Profit share to LEVL: **20%** = $100/month
@@ -510,7 +510,7 @@ Level 1          Level 2          Level 3          Funded         Pro
 | Metric | Value |
 |--------|-------|
 | Total CAC | $20,000 |
-| Challenge revenue | $247,500 (1,000 × 2.5 attempts × $99) |
+| Challenge revenue | $247,500 (1,000 × 2.5 attempts × €99) |
 | Funded traders | 250 (25%) |
 | Month 1 profit share | $25,000 (250 × $100) |
 | Month 6 profit share | $32,768 (retention curve) |
@@ -639,53 +639,51 @@ Level 1          Level 2          Level 3          Funded         Pro
 **Visual: Timeline with milestones**
 
 ```
-Month 1-2: BUILD MVP
+Month 1-2: FOUNDATION
 │
-├─ Challenge system (demo capital)
-├─ Basic P2P markets (5-10 sports)
-├─ Sports data integration
-├─ User dashboard
-└─ Milestone: MVP ready, internal testing
+├─ Core infrastructure: Auth, wallet integration, Polymarket API connection
+├─ Basic UI framework
+├─ Team onboarding
+└─ Milestone: Foundation complete
 
-Month 3: BETA LAUNCH
+Month 3-4: MVP BUILD
 │
-├─ Invite 100 beta users (waitlist)
-├─ First challenges go live
-├─ Iteration based on feedback
-├─ Community Discord launch
-└─ Milestone: 100 users, first challenges completed
+├─ Sports data integration (football, tennis, table tennis)
+├─ Match listings, match detail (5 tabs)
+├─ Betting system (5+ bet types per sport)
+├─ Team/league pages with form
+├─ Internal testing
+└─ Milestone: MVP ready
 
-Month 4: PRODUCT ITERATION
+Month 5: BETA LAUNCH
 │
-├─ V1.0 based on beta learnings
-├─ Enhanced markets, more sports
-├─ Referral program launch
-├─ Content marketing ramp-up
-└─ Milestone: Product-market fit signals
+├─ Invite 50-100 beta users
+├─ Collect feedback, monitor stability
+├─ Fix critical bugs
+├─ Iterate on UX based on real usage
+└─ Milestone: Beta tested, validated
 
-Month 5: PUBLIC LAUNCH
+Month 6: PREP FOR PUBLIC LAUNCH
 │
-├─ Full launch (Product Hunt, etc.)
-├─ Marketing campaigns live
-├─ Scale to 1,000 users
-├─ First funded accounts approved
-└─ Milestone: 1,000 users, 250 in challenges
+├─ Product polish, performance optimization
+├─ Marketing prep (landing page, campaigns)
+├─ Onboarding flow refinement
+├─ Scale to 500+ users
+└─ Milestone: Ready for public launch
 
-Month 6: FUNDED PHASE
-│
-├─ Funded traders go live
-├─ P2P markets active trading
-├─ First profit share payouts
-├─ Community growth (leaderboards, events)
-└─ Milestone: 250 funded traders, revenue positive
+Post Month 6:
+├─ Public launch with acquisition campaigns
+├─ Scale to 1K+ users
+├─ First funded accounts
+└─ Revenue tracking
 ```
 
 **Speaker Notes:**
-- Aggressive but achievable timeline
+- Realistic timeline with focused scope (3 sports)
 - Leverage FTMO tech infrastructure (faster build)
 - Beta critical for product-market fit
-- Month 5 = scale mode
-- Month 6 = prove full business model
+- Month 6 prep = ready for public launch
+- Post-M6 = prove full business model with scale
 
 ---
 
@@ -695,49 +693,52 @@ Month 6: FUNDED PHASE
 
 **Visual: Org chart by phase**
 
-**Founding Team (Month 0-1):**
-- **Product Manager** (You) - Vision, strategy, execution
-- **Tech Lead / CTO** - Architecture, MVP build
-- **Leverage FTMO:** Compliance, Finance, Infrastructure
+**Phase 1: Foundation (M1-2)**
+- **PM:** Me (strategy, specs, roadmap)
+- **3 Developers:** Core infrastructure (1 backend, 2 mobile)
+- **1 Designer:** Full-time UI/UX
+- **Total: 5 people + FTMO support**
 
-**Phase 1 Team (Month 1-3): MVP + Beta**
-- PM + Tech Lead
-- +2 Engineers (Frontend, Backend)
-- +1 Designer (UI/UX)
-- +1 Growth Lead (Marketing, Community)
-- **Total: 6 people**
+**Phase 2: Early Growth (M3-5)**
+- Core team (PM + 3 devs + designer)
+- **+2 Developers:** Feature expansion
+- **+1 QA Engineer:** Testing & quality
+- **+1 Marketing:** Beta launch prep
+- **Total: 9 people** (PM, 5 devs, designer, QA, marketing)
 
-**Phase 2 Team (Month 4-6): Scale**
-- Core team (6)
-- +2 Engineers (Mobile, Data)
-- +1 Community Manager
-- +1 Data Analyst
-- **Total: 10 people**
+**Phase 3: Scale (M6+)**
+- **1 Dev → Tech Lead:** Promote senior developer to Tech Lead role for architecture & managing tech team
+- **+2-3 Developers:** Team expansion
+- **+Marketing Specialist:** Acquisition, campaigns
+- **+Growth/Community Manager:** Community, retention, viral loops
+- **+Customer Support:** User assistance
+- **Total: 12-13 people**
 
 **Key Roles:**
 
 | Role | Responsibilities |
 |------|------------------|
 | **PM** | Vision, roadmap, coordination |
-| **Tech Lead** | Architecture, infrastructure |
-| **Engineers** | Frontend (React Native), Backend (Node.js), Data pipeline |
+| **Developers** | Backend (Node.js), Mobile (React Native), Data integration |
 | **Designer** | UI/UX, brand consistency |
-| **Growth** | Marketing, partnerships, content |
-| **Community** | Discord, engagement, support |
-| **Data Analyst** | Metrics, optimization, fraud detection |
+| **QA Engineer** | Testing, quality assurance, bug tracking |
+| **Marketing** | Acquisition, campaigns, content |
+| **Tech Lead** | Promoted from dev team - Architecture, managing tech team (Phase 3) |
+| **Growth/Community** | Retention, community engagement (Phase 3) |
 
 **FTMO Shared Services:**
 - Compliance team
 - Finance / accounting
 - Cloud infrastructure
-- Customer support (tier 2)
+- Fraud detection
 
 **Speaker Notes:**
 - Lean team leveraging FTMO resources
-- Focus on product & growth, not reinventing infrastructure
-- Key hire: Growth lead (market expertise)
+- Focus on product & quality with dedicated QA
+- Designer full-time from start for quality
 - Scale team only after product-market fit
-- Months 1-3: 6 people, Months 4-6: 10 people
+- Tech Lead promoted from existing dev team (cost-effective)
+- M1-2: 5 people, M3-5: 9 people, M6+: 12-13 people
 
 ---
 
@@ -754,13 +755,13 @@ Month 6: FUNDED PHASE
 
 | Milestone | Target | Month |
 |-----------|--------|-------|
-| MVP ready | Internal testing complete | 2 |
-| Beta launch | 100 users | 3 |
-| First challenges passed | 25 funded traders | 3 |
-| Product-market fit | NPS >40, retention >50% | 4 |
-| Public launch | 1,000 users | 5 |
-| Revenue positive (cohort) | LTV > CAC + fixed costs | 6 |
-| First profit share paid | 250 funded traders active | 6 |
+| Foundation complete | Core infrastructure ready | 2 |
+| MVP ready | Internal testing complete | 4 |
+| Beta launch | 50-100 users | 5 |
+| Product validated | Feedback collected, bugs fixed | 5 |
+| Public launch ready | 500+ users | 6 |
+| Revenue positive (cohort) | LTV > CAC + fixed costs | 7+ |
+| First profit share paid | 250 funded traders active | 7+ |
 
 **Success Metrics (Month 6):**
 
@@ -826,7 +827,7 @@ Month 6: FUNDED PHASE
 
 **Why LEVL Wins:**
 
-✅ **Proven Model** - FTMO's challenge system ($7B revenue)
+✅ **Proven Model** - FTMO's challenge system ($500M+ annual revenue)
 ✅ **Fair Markets** - P2P eliminates bookmaker edge
 ✅ **Modern Experience** - Built for Gen Z/Millennials
 ✅ **FTMO Foundation** - Infrastructure, compliance, capital
@@ -883,7 +884,7 @@ Month 6: FUNDED PHASE
 **Delivery:** Confident, data-driven, passionate
 
 **Key Takeaways:**
-1. Massive market ($100B+), perfect timing
+1. Massive market ($112B growing to $200B+), perfect timing
 2. Unique positioning (only platform with all three)
 3. Proven economics (FTMO model)
 4. Clear execution plan (6 months to proof)
