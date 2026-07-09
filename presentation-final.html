@@ -3696,65 +3696,33 @@
             <div class="slide-content">
                 <h2 style="margin-bottom: 20px;">Exit Criteria & Kill Metrics</h2>
                 <p style="text-align: center; font-size: 16px; color: var(--medium-grey); margin-bottom: 32px;">
-                    Clear thresholds for when to pivot or stop the project
+                    Clear thresholds for when to stop the project
                 </p>
-                <div class="two-column" style="gap: 32px;">
-                    <div>
-                        <h3 style="color: var(--yellow); margin-bottom: 16px; font-size: 22px;">🚨 Kill Criteria (Stop Project)</h3>
-                        <div class="box" style="padding: 24px; border: 2px solid rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.05);">
-                            <ul style="font-size: 15px; line-height: 1.9; list-style: none; padding: 0;">
-                                <li style="margin-bottom: 14px;">
-                                    <strong style="color: var(--yellow);">❌ Challenge calibration failure</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 14px;">Pass rate <15% (too hard) or >45% (too easy) after 3 iterations</span>
-                                </li>
-                                <li style="margin-bottom: 14px;">
-                                    <strong style="color: var(--yellow);">❌ User acquisition failure</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 14px;">CAC >€100 consistently or <200 signups in beta</span>
-                                </li>
-                                <li style="margin-bottom: 14px;">
-                                    <strong style="color: var(--yellow);">❌ Retention collapse</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 14px;">2nd attempt rate <20% or funded trader churn >50%/month</span>
-                                </li>
-                                <li style="margin-bottom: 14px;">
-                                    <strong style="color: var(--yellow);">❌ Polymarket dependency risk</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 14px;">API instability >5% downtime or sports coverage insufficient</span>
-                                </li>
-                                <li style="margin-bottom: 14px;">
-                                    <strong style="color: var(--yellow);">❌ Regulatory blocker</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 14px;">Key markets (US/EU) require prohibitive licensing (>€500K + 12mo)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--green); margin-bottom: 16px; font-size: 22px;">🔄 Pivot Options</h3>
-                        <div class="box box-green" style="padding: 24px; margin-bottom: 20px;">
-                            <p style="font-size: 15px; line-height: 1.8; color: var(--light-grey); margin-bottom: 16px;">
-                                <strong style="color: var(--yellow);">Pivot 1: Pure Challenge Platform</strong><br/>
-                                <span style="font-size: 14px; color: var(--medium-grey);">Drop Polymarket dependency. Become pure demo challenge platform (like FTMO). Lower risk, simpler execution.</span>
-                            </p>
-                            <p style="font-size: 15px; line-height: 1.8; color: var(--light-grey); margin-bottom: 16px;">
-                                <strong style="color: var(--yellow);">Pivot 2: Partner with Betting Exchange</strong><br/>
-                                <span style="font-size: 14px; color: var(--medium-grey);">Integrate with Betfair/Smarkets instead of Polymarket for better liquidity and sports coverage.</span>
-                            </p>
-                            <p style="font-size: 15px; line-height: 1.8; color: var(--light-grey);">
-                                <strong style="color: var(--yellow);">Pivot 3: B2B Licensing</strong><br/>
-                                <span style="font-size: 14px; color: var(--medium-grey);">License challenge technology to existing sportsbooks (DraftKings, FanDuel) as white-label solution.</span>
-                            </p>
-                        </div>
-                        <h3 style="color: var(--yellow); margin-bottom: 12px; font-size: 18px;">Timeline & Budget</h3>
-                        <div class="box" style="padding: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
-                            <ul style="font-size: 14px; line-height: 1.8; color: var(--light-grey);">
-                                <li><strong>Max investment horizon:</strong> 12 months</li>
-                                <li><strong>Kill decision point:</strong> Month 6 (post-beta)</li>
-                                <li><strong>Pivot window:</strong> Month 4-6</li>
-                                <li><strong>FTMO backing:</strong> Covers all costs</li>
-                            </ul>
-                        </div>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="box" style="padding: 32px; border: 2px solid rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.05);">
+                        <h3 style="color: var(--yellow); margin-bottom: 24px; font-size: 22px; text-align: center;">🚨 Kill Criteria</h3>
+                        <ul style="font-size: 16px; line-height: 2; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <strong style="color: var(--yellow);">❌ Challenge calibration failure</strong><br/>
+                                <span style="color: var(--medium-grey); font-size: 15px;">Cannot balance difficulty - pass rate too low (impossible) or too high (revenue model breaks)</span>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <strong style="color: var(--yellow);">❌ Retention collapse</strong><br/>
+                                <span style="color: var(--medium-grey); font-size: 15px;">Users don't retry after failing, or funded traders churn quickly - no engagement</span>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <strong style="color: var(--yellow);">❌ Acquisition too expensive</strong><br/>
+                                <span style="color: var(--medium-grey); font-size: 15px;">Cost per user acquisition far exceeds revenue potential - breakeven point unreachable at scale</span>
+                            </li>
+                            <li style="margin-bottom: 0;">
+                                <strong style="color: var(--yellow);">❌ Regulatory blocker</strong><br/>
+                                <span style="color: var(--medium-grey); font-size: 15px;">Key markets require prohibitive licensing costs or restrictions that prevent viable operation</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="insight-box" style="margin-top: 28px;">
-                    <strong>Philosophy:</strong> Fast validation, clear kill criteria, intelligent pivots. Better to stop early than pour resources into a failing model.
+                    <strong>Philosophy:</strong> Fast validation, clear kill criteria. Better to stop early than pour resources into a failing model.
                 </div>
             </div>
         </div>
