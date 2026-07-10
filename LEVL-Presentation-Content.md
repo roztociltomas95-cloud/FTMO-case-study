@@ -804,7 +804,94 @@ Post Month 6:
 
 ---
 
-# SLIDE 19: CLOSING - UNIQUE POSITION
+# 📊 BLOCK 5: VALIDATION
+
+---
+
+# SLIDE 19: SUCCESS SIGNALS (MONTH 6)
+
+**Headline:** Success Signals (Month 6)
+
+**Subtitle:** Key indicators that validate product-market fit and business viability
+
+**Visual: Two sections**
+
+**Core Success Metrics (6 cards in 2x3 grid):**
+
+1. **Challenge Validation**
+   - Metric: Pass rate calibrated
+   - Description: Balanced difficulty (not too easy, not impossible)
+
+2. **User Retention**
+   - Metric: Strong 2nd attempts
+   - Description: Users retry after failing, low churn
+
+3. **User Acquisition**
+   - Metric: Low CAC
+   - Description: Cost-effective organic-first growth
+
+4. **Unit Economics**
+   - Metric: Strong LTV:CAC
+   - Description: Positive cohort economics from Month 1
+
+5. **Funded Trader Success**
+   - Metric: Active trading
+   - Description: Funded accounts actively using platform
+
+6. **Platform Stability**
+   - Metric: No major issues
+   - Description: Stable tech, reliable Polymarket integration
+
+**Product-Market Fit Signals (bottom box):**
+Beyond metrics, we look for qualitative signs: **Organic growth** (users finding us naturally), **community buzz** on Reddit/Twitter/Discord, **positive sentiment** in early user discussions, and **word-of-mouth referrals**. These indicate genuine user interest beyond paid acquisition.
+
+**Speaker Notes:**
+- Month 6 validation checkpoint - did we prove the concept?
+- Core metrics are qualitative signals, not hard targets
+- Focus on calibration (challenge difficulty), retention (users coming back), and economics (LTV > CAC)
+- PMF signals are behavioral: organic discovery, community engagement, word-of-mouth
+- These metrics inform go/no-go decision for scale phase
+
+---
+
+# SLIDE 20: KEY RISKS & WHEN TO STOP
+
+**Headline:** Key Risks & When to Stop
+
+**Subtitle:** Understanding what we can fix vs. what kills the project
+
+**Visual: Two columns side-by-side**
+
+**🔄 Risks We'll Iterate On (Green box, left):**
+- ✓ **Challenge calibration** - Adjust difficulty through iteration
+- ✓ **User retention** - Improve UX, incentives, onboarding
+- ✓ **Polymarket integration** - Optimize API usage, add fallbacks
+- ✓ **Market liquidity** - Focus on high-volume markets first
+
+**🚨 Deal-Breaker Risks (Yellow box, right):**
+- ❌ **Acquisition economics** - CAC exceeds LTV, no path to profitability
+- ❌ **Regulatory blocker** - Prohibitive licensing in key markets
+- ❌ **Polymarket shutdown** - Platform dependency risk materializes
+- ❌ **Fraud at scale** - Cannot prevent systematic abuse
+
+**Bottom: Philosophy**
+> **"Iterate on product/UX issues. Stop on fundamental business model failures. Know the difference."**
+
+**Speaker Notes:**
+- Clear distinction between iterate-able vs. deal-breaker risks
+- Green box = product/UX problems we can solve (calibration, retention, tech)
+- Yellow box = fundamental business model failures that warrant stopping
+- Philosophy: Be willing to pivot on product, but know when core economics don't work
+- This framework shows strategic thinking about risk management
+- Demonstrates understanding that not all problems are equal
+
+---
+
+# 🎯 BLOCK 6: CLOSING
+
+---
+
+# SLIDE 21: THE LEVL EDGE
 
 **Headline:** LEVL's Competitive Moat
 
@@ -853,7 +940,7 @@ Post Month 6:
 
 ---
 
-# SLIDE 20: Q&A
+# SLIDE 22: Q&A
 
 **Visual: Simple, clean**
 
@@ -885,7 +972,7 @@ Post Month 6:
 
 # PRESENTATION COMPLETE
 
-**Total slides:** 20 (+ backup slides)
+**Total slides:** 22 (+ backup slides)
 **Duration:** 30 minutes
 **Format:** Dark theme, LEVL brand colors
 **Delivery:** Confident, data-driven, passionate
@@ -895,7 +982,8 @@ Post Month 6:
 2. Unique positioning (only platform with all three)
 3. Proven economics (FTMO model)
 4. Clear execution plan (6 months to proof)
-5. FTMO's unfair advantage (infrastructure, expertise)
+5. Validation framework (success signals + risk categorization)
+6. FTMO's unfair advantage (infrastructure, expertise)
 
 **Next Steps:**
 - Refine slides based on feedback
