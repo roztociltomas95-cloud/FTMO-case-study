@@ -1771,9 +1771,12 @@
                             <li><strong>Mobile-first:</strong> 84-90% of bets via mobile</li>
                             <li><strong>Gen Z/Millennials:</strong> 76% market share</li>
                             <li><strong>US Legalization:</strong> 37 states live, more expanding</li>
-                            <li><strong>P2P Growth:</strong> Polymarket hits $3B+ volume</li>
-                            <li><strong>Sports Dominance:</strong> 85% of Kalshi volume</li>
+                            <li><strong>P2P Growth:</strong> Polymarket $3B+ volume (63% sports)</li>
+                            <li><strong>Sports Dominance:</strong> Kalshi 85%, Polymarket 63%</li>
                         </ul>
+                        <div style="background: rgba(251, 191, 36, 0.1); border-left: 3px solid var(--yellow); padding: 12px; border-radius: 4px; margin-top: 16px;">
+                            <strong style="color: var(--yellow);">Opportunity:</strong> <span style="font-size: 14px;">Sports = dominant use case, but existing platforms lack sports-native UX & funding model</span>
+                        </div>
                     </div>
                 </div>
                 <div class="insight-box">
@@ -1784,14 +1787,45 @@
             <!-- Slide 2: Market Position -->
             <div class="slide-content">
                 <h2 style="margin-bottom: 12px;">Market Position</h2>
-                <div class="positioning-map" style="width: 550px; height: 550px; margin: 20px auto;">
-                    <div class="map-axis-x"></div>
-                    <div class="map-axis-y"></div>
-                    <div class="map-label top">HIGH PROFIT POTENTIAL</div>
-                    <div class="map-label bottom">LIMITED UPSIDE</div>
-                    <div class="map-label left">House Edge</div>
-                    <div class="map-label right">Pure Skill (P2P)</div>
-                    <div class="map-point our-position">Our future position</div>
+                <div style="position: relative;">
+                    <!-- LEVL callout box (top right, outside graph) -->
+                    <div style="position: absolute; top: 20px; right: 60px; z-index: 10;">
+                        <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 255, 136, 0.05) 100%); border: 2px solid var(--green); border-radius: 12px; padding: 16px 24px; box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);">
+                            <div style="font-size: 28px; font-weight: 800; color: var(--green); margin-bottom: 4px;">LEVL</div>
+                            <div style="font-size: 12px; color: var(--medium-grey);">Our Target Position</div>
+                        </div>
+                        <!-- Diagonal arrow pointing to competitor cluster -->
+                        <svg style="position: absolute; top: 60px; left: -280px;" width="280" height="120" viewBox="0 0 280 120">
+                            <defs>
+                                <marker id="arrowhead-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                                    <polygon points="0 0, 6 3, 0 6" fill="var(--green)" />
+                                </marker>
+                            </defs>
+                            <path d="M 270 10 Q 150 40, 20 100" stroke="var(--green)" stroke-width="2.5" stroke-dasharray="6 3" fill="none" marker-end="url(#arrowhead-green)"/>
+                        </svg>
+                    </div>
+
+                    <div class="positioning-map" style="width: 550px; height: 550px; margin: 20px auto;">
+                        <div class="map-axis-x"></div>
+                        <div class="map-axis-y"></div>
+                        <div class="map-label top">HIGH PROFIT POTENTIAL</div>
+                        <div class="map-label bottom">LIMITED UPSIDE</div>
+                        <div class="map-label left">House Edge</div>
+                        <div class="map-label right">Pure Skill (P2P)</div>
+
+                        <!-- Prop Firms cluster (target area) -->
+                        <div class="map-point competitor propmarket" style="right: 140px; top: 75px;">
+                            <div class="point-dot" style="background: rgba(251, 191, 36, 0.7); width: 10px; height: 10px;"></div>
+                            <div class="point-label" style="color: var(--yellow); font-size: 12px;">PropMarket</div>
+                        </div>
+                        <div class="map-point competitor fundedpoly" style="right: 105px; top: 95px;">
+                            <div class="point-dot" style="background: rgba(251, 191, 36, 0.7); width: 10px; height: 10px;"></div>
+                            <div class="point-label" style="color: var(--yellow); font-size: 12px;">FundedPoly</div>
+                        </div>
+                        <div class="map-point competitor polyfundr" style="right: 125px; top: 120px;">
+                            <div class="point-dot" style="background: rgba(251, 191, 36, 0.7); width: 10px; height: 10px;"></div>
+                            <div class="point-label" style="color: var(--yellow); font-size: 12px;">PolyFundr</div>
+                        </div>
 
                     <!-- Prediction Markets -->
                     <div class="map-point competitor kalshi">
@@ -1816,6 +1850,84 @@
                         <div class="point-dot"></div>
                         <div class="point-label">BetMGM</div>
                     </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Competitive Landscape -->
+            <div class="slide-content">
+                <h2 style="margin-bottom: 16px;">Competitive Landscape: Early Market</h2>
+                <p style="text-align: center; font-size: 15px; color: var(--medium-grey); margin-bottom: 24px;">
+                    Emerging prop firms + established platforms = fragmented market with clear opportunity
+                </p>
+                <div class="two-column" style="gap: 32px; margin-top: 20px;">
+                    <div>
+                        <h3 style="color: var(--yellow); font-size: 20px; margin-bottom: 16px;">Existing Players</h3>
+                        <div class="box" style="padding: 16px; margin-bottom: 12px; border: 1px solid rgba(251, 191, 36, 0.3);">
+                            <h4 style="font-size: 16px; color: var(--yellow); margin-bottom: 8px;">Prop Firms (2024-2025 launches)</h4>
+                            <ul style="font-size: 14px; line-height: 1.7; color: var(--medium-grey);">
+                                <li><strong>PropMarket:</strong> $5K-$100K, 70/30 split, $59+ entry</li>
+                                <li><strong>FundedPoly:</strong> $5K-$100K, 80% split, 3× leverage</li>
+                                <li><strong>PolyFundr:</strong> 90% split, one-step eval</li>
+                            </ul>
+                            <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: var(--medium-grey);">
+                                ⚠️ Polymarket-only, generic P2P interface, no sports focus
+                            </div>
+                        </div>
+                        <div class="box box-green" style="padding: 16px;">
+                            <h4 style="font-size: 16px; color: var(--yellow); margin-bottom: 8px;">P2P Platforms</h4>
+                            <ul style="font-size: 14px; line-height: 1.7; color: var(--medium-grey);">
+                                <li><strong>Polymarket:</strong> $3B+ volume, 63% sports</li>
+                                <li><strong>Kalshi:</strong> CFTC-regulated, 85% sports</li>
+                            </ul>
+                            <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: var(--medium-grey);">
+                                ℹ️ Direct P2P only, no funding model, generic UX
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--green); font-size: 20px; margin-bottom: 16px;">LEVL Advantages</h3>
+                        <div class="box box-green" style="padding: 18px; margin-bottom: 12px;">
+                            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                                <div style="font-size: 24px;">🎯</div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Sports-Native Product</div>
+                                    <div style="font-size: 14px; color: var(--medium-grey);">Built for sports from day 1 (not generic P2P), sports app-quality UX, sport-specific features (lineups, H2H, team form)</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                                <div style="font-size: 24px;">💰</div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Larger Funded Accounts</div>
+                                    <div style="font-size: 14px; color: var(--medium-grey);">$10K-$50K+ (vs $5K-$100K competitors), premium positioning, higher LTV</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                                <div style="font-size: 24px;">🔗</div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Multi-Platform Strategy</div>
+                                    <div style="font-size: 14px; color: var(--medium-grey);">Polymarket + Kalshi integration (not single-platform risk), future-proof approach</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                                <div style="font-size: 24px;">🏢</div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">FTMO Infrastructure</div>
+                                    <div style="font-size: 14px; color: var(--medium-grey);">Proven $500M+ model, compliance expertise, brand trust, operational muscle</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 12px;">
+                                <div style="font-size: 24px;">📈</div>
+                                <div>
+                                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Targeted Marketing</div>
+                                    <div style="font-size: 14px; color: var(--medium-grey);">Data-driven acquisition, sports community focus, conversion-optimized funnel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: rgba(0, 255, 136, 0.1); border-left: 3px solid var(--green); padding: 16px; border-radius: 8px; margin-top: 24px;">
+                    <strong style="color: var(--green); font-size: 16px;">Market Reality:</strong> <span style="font-size: 14px; color: var(--light-grey);">Competition validates market demand. We're not first movers—we're better movers with superior product, economics, and execution.</span>
                 </div>
             </div>
 
