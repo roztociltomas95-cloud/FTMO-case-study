@@ -2372,54 +2372,107 @@
 
             <!-- Slide 5: Risks & Mitigation -->
             <div class="slide-content">
-                <h2 style="margin-bottom: 20px;">Risks & Mitigation</h2>
-                <div class="two-column" style="gap: 32px; margin-top: 24px;">
+                <h2 style="margin-bottom: 12px;">Risks & Mitigation Strategy</h2>
+                <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 24px;">Comprehensive risk framework with concrete mitigation plans</p>
+
+                <div class="two-column" style="gap: 20px;">
+                    <!-- LEFT: Financial Risks -->
                     <div>
-                        <div class="box box-green" style="min-height: 380px; display: flex; flex-direction: column;">
-                            <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--yellow);">Financial Risks</h3>
-                            <ul style="font-size: 16px; line-height: 1.8; list-style: none; padding: 0;">
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Regulatory Compliance</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">Sports betting laws vary by jurisdiction</span>
-                                </li>
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Capital Liability</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">Funded accounts create real liability exposure</span>
-                                </li>
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Fraud & Abuse</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">Coordinated betting, account manipulation</span>
-                                </li>
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--yellow);">Financial Risks</h3>
+
+                        <!-- Risk 1 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(251, 191, 36, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--yellow); margin-bottom: 6px; font-size: 15px;">1. Regulatory Compliance</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> High - could block key markets</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>Demo capital model (not gambling)</li>
+                                <li>Geographic filtering, legal counsel Q1</li>
+                                <li>Clear ToS, KYC/AML</li>
                             </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Pivot to education/analytics</p>
+                        </div>
+
+                        <!-- Risk 2 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(251, 191, 36, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--yellow); margin-bottom: 6px; font-size: 15px;">2. Capital Liability</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> Medium - cash flow strain</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>Conservative 20-30% pass rate target</li>
+                                <li>Strict risk mgmt (drawdown limits)</li>
+                                <li>Reserve fund (20% of fees)</li>
+                            </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Tighten rules if &gt;35% pass</p>
+                        </div>
+
+                        <!-- Risk 3 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(251, 191, 36, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--yellow); margin-bottom: 6px; font-size: 15px;">3. Fraud & Abuse</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> High - kills economics</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>FTMO fraud detection algorithms</li>
+                                <li>KYC at entry, behavioral analysis</li>
+                                <li>IP/device tracking, manual review</li>
+                            </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Enhanced verification (video calls)</p>
                         </div>
                     </div>
+
+                    <!-- RIGHT: Operational Risks -->
                     <div>
-                        <div class="box box-green" style="min-height: 380px; display: flex; flex-direction: column;">
-                            <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--yellow);">Operational Risks</h3>
-                            <ul style="font-size: 16px; line-height: 1.8; list-style: none; padding: 0;">
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Sports Data Reliability</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">API downtime, incorrect odds, delayed updates</span>
-                                </li>
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Platform Scalability</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">High-volume trading during live events</span>
-                                </li>
-                                <li style="margin-bottom: 16px;">
-                                    <strong style="color: var(--light-grey);">Polymarket Dependency</strong><br/>
-                                    <span style="color: var(--medium-grey); font-size: 15px;">Reliance on Polymarket API availability and sports market coverage</span>
-                                </li>
+                        <h3 style="font-size: 20px; margin-bottom: 16px; color: var(--yellow);">Operational Risks</h3>
+
+                        <!-- Risk 4 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(0, 255, 136, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--green); margin-bottom: 6px; font-size: 15px;">4. Sports Data Reliability</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> Medium - trust issues</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>Tier-1 providers (Opta, Stats Perform)</li>
+                                <li>Multi-source verification (2+ feeds)</li>
+                                <li>Fallback feeds (auto-switchover)</li>
                             </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Pause live, switch to pre-match</p>
+                        </div>
+
+                        <!-- Risk 5 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(0, 255, 136, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--green); margin-bottom: 6px; font-size: 15px;">5. Platform Scalability</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> Medium - reputation damage</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>FTMO cloud (proven scale)</li>
+                                <li>Auto-scaling, load testing (10× traffic)</li>
+                                <li>CDN, caching, DB optimization</li>
+                            </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Queue system during peaks</p>
+                        </div>
+
+                        <!-- Risk 6 -->
+                        <div style="margin-bottom: 16px; padding: 14px; background: rgba(0, 255, 136, 0.1); border-radius: 8px;">
+                            <h4 style="color: var(--green); margin-bottom: 6px; font-size: 15px;">6. Polymarket Dependency</h4>
+                            <p style="font-size: 12px; margin-bottom: 4px;"><strong>Impact:</strong> Critical - business model breaks</p>
+                            <p style="font-size: 12px; margin-bottom: 6px;"><strong>Mitigation:</strong></p>
+                            <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+                                <li>Multi-platform (Kalshi by Month 6)</li>
+                                <li>API fallbacks (auto switchover)</li>
+                                <li>Direct Polymarket partnership</li>
+                            </ul>
+                            <p style="font-size: 11px; margin-top: 4px; color: var(--medium-grey);"><strong>Fallback:</strong> Pivot to Kalshi or sportsbooks</p>
                         </div>
                     </div>
                 </div>
-                <div class="insight-box" style="margin-top: 28px;">
-                    <strong>Mitigation Strategy:</strong> Leverage FTMO's proven compliance framework, fraud detection systems, cloud infrastructure, and risk management expertise. Partner with tier-1 sports data providers for reliability.
+
+                <div style="margin-top: 20px; padding: 16px; background: rgba(0, 255, 136, 0.15); border-radius: 12px; border-left: 4px solid var(--green);">
+                    <h3 style="margin-bottom: 8px; color: var(--green); font-size: 16px;">FTMO Infrastructure Advantage</h3>
+                    <p style="font-size: 13px; line-height: 1.6;">Leveraging FTMO capabilities: Proven compliance framework (KYC/AML), fraud detection algorithms (battle-tested on $500M+ revenue), cloud infrastructure (scalable from day 1), risk management expertise (10+ years). <strong>We're not building from zero - massive head start.</strong></p>
                 </div>
             </div>
         </div>
 
-        <!-- Section 5: Team -->
+                <!-- Section 5: Team -->
         <div class="section" id="team">
             <!-- Slide 1: Team Composition -->
             <div class="slide-content">
@@ -2493,63 +2546,325 @@
             </div>
         </div>
 
+        <!-- Section 5b: Beta Strategy -->
+        <div class="section" id="beta-strategy">
+            <!-- Slide 1: Beta Launch Strategy -->
+            <div class="slide-content">
+                <h2 style="margin-bottom: 12px;">Beta Launch Strategy</h2>
+                <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 24px;">50-100 users, 60 days, critical validation phase</p>
+
+                <div class="two-column" style="gap: 24px;">
+                    <div>
+                        <h3 style="color: var(--yellow); margin-bottom: 16px; font-size: 18px;">Beta Goals</h3>
+
+                        <h4 style="margin-top: 16px; margin-bottom: 10px; font-size: 15px;">Primary Objectives:</h4>
+                        <ol style="margin-left: 18px; line-height: 1.7; font-size: 13px;">
+                            <li><strong>Validate Challenge Calibration</strong> - Pass rate 20-30%? Fair but challenging?</li>
+                            <li><strong>Test Product-Market Fit</strong> - Do users retry? High engagement?</li>
+                            <li><strong>Validate Unit Economics</strong> - LTV hold? CAC achievable?</li>
+                            <li><strong>Stress-Test Infrastructure</strong> - Handle live betting load? Polymarket stable?</li>
+                        </ol>
+
+                        <h4 style="margin-top: 18px; margin-bottom: 10px; font-size: 15px;">Beta Metrics:</h4>
+                        <ul style="margin-left: 18px; line-height: 1.6; font-size: 12px;">
+                            <li>Challenge completion rate</li>
+                            <li>Retry rate after failure</li>
+                            <li>Daily/weekly active users</li>
+                            <li>NPS score, CAC (estimated)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--green); margin-bottom: 16px; font-size: 18px;">Beta Execution</h3>
+
+                        <div style="margin-bottom: 16px;">
+                            <h4 style="font-size: 14px; color: var(--green); margin-bottom: 6px;">Week 1-2: Onboarding (10-20 users)</h4>
+                            <ul style="font-size: 12px; line-height: 1.6; margin-left: 18px;">
+                                <li>Invite analytical bettors from personal network</li>
+                                <li>Close monitoring, daily feedback calls</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <h4 style="font-size: 14px; color: var(--green); margin-bottom: 6px;">Week 3-6: Scale to 50 (30-50 users)</h4>
+                            <ul style="font-size: 12px; line-height: 1.6; margin-left: 18px;">
+                                <li>Expand to Reddit, Discord invites</li>
+                                <li>Weekly surveys, iterate on UX pain points</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <h4 style="font-size: 14px; color: var(--green); margin-bottom: 6px;">Week 7-8: Stress Test (50-100 users)</h4>
+                            <ul style="font-size: 12px; line-height: 1.6; margin-left: 18px;">
+                                <li>Push acquisition, test at higher volume</li>
+                                <li>Validate challenge economics at scale</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 14px; background: rgba(0, 255, 136, 0.1); border-radius: 8px;">
+                            <h4 style="margin-bottom: 8px; font-size: 14px;">Decision Point (Week 8):</h4>
+                            <ul style="font-size: 12px; line-height: 1.8; list-style: none; padding: 0;">
+                                <li>✅ <strong>GO:</strong> Strong signals → Prep for public launch</li>
+                                <li>❌ <strong>ITERATE:</strong> Mixed signals → Pivot, fix, re-test</li>
+                                <li>🛑 <strong>STOP:</strong> Failed validation → Kill or major pivot</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Scenario A - Beta Fails -->
+            <div class="slide-content">
+                <h2 style="margin-bottom: 12px;">Scenario A: Beta Doesn't Validate</h2>
+                <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 24px;">What if metrics don't hit targets? Clear decision framework.</p>
+
+                <div class="two-column" style="gap: 24px;">
+                    <div>
+                        <h3 style="color: #FF3B30; margin-bottom: 16px; font-size: 18px;">🚨 Failure Signals</h3>
+
+                        <div style="background: rgba(255, 59, 48, 0.1); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">KILL SIGNALS (Stop Immediately):</h4>
+                            <ul style="font-size: 12px; line-height: 1.6; margin-left: 16px;">
+                                <li>Pass rate >50% (too easy, economics broken)</li>
+                                <li>Pass rate <10% (impossible, users give up)</li>
+                                <li>Retry rate <20% (users don't believe)</li>
+                                <li>NPS <0 (active dislike)</li>
+                                <li>Major regulatory blocker</li>
+                                <li>Systematic fraud we can't prevent</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: rgba(251, 191, 36, 0.1); padding: 16px; border-radius: 8px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">⚠️ PIVOT SIGNALS (Major Changes Needed):</h4>
+                            <ul style="font-size: 12px; line-height: 1.6; margin-left: 16px;">
+                                <li>Pass rate 35-45% (needs recalibration)</li>
+                                <li>Retry rate 20-30% (lukewarm interest)</li>
+                                <li>NPS 0-20 (works but not loved)</li>
+                                <li>CAC >$50 (acquisition too expensive)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--green); margin-bottom: 16px; font-size: 18px;">🔄 Pivot Options</h3>
+
+                        <div style="margin-bottom: 12px;">
+                            <h4 style="font-size: 13px; color: var(--yellow); margin-bottom: 4px;">If Challenge Calibration is Off:</h4>
+                            <p style="font-size: 11px; line-height: 1.5;">Adjust profit targets (15% → 10% or 20%), change duration (30 → 45 or 20 days), modify risk limits</p>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <h4 style="font-size: 13px; color: var(--yellow); margin-bottom: 4px;">If Acquisition Too Expensive:</h4>
+                            <p style="font-size: 11px; line-height: 1.5;">Pivot target market, change channels (organic vs paid), adjust pricing (€99 → €49 or €149), add referral incentives</p>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <h4 style="font-size: 13px; color: var(--yellow); margin-bottom: 4px;">If Product-Market Fit Weak:</h4>
+                            <p style="font-size: 11px; line-height: 1.5;">Simplify onboarding, add gamification, improve UX on pain points, add educational content</p>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <h4 style="font-size: 13px; color: var(--yellow); margin-bottom: 4px;">If Infrastructure Can't Handle:</h4>
+                            <p style="font-size: 11px; line-height: 1.5;">Scale back sports coverage temporarily, optimize Polymarket API, add caching, delay live betting</p>
+                        </div>
+
+                        <div style="padding: 12px; background: rgba(0, 255, 136, 0.05); border-left: 4px solid var(--green); border-radius: 8px; margin-top: 16px;">
+                            <h4 style="font-size: 13px; margin-bottom: 6px;">Decision Framework:</h4>
+                            <ul style="font-size: 11px; line-height: 1.6; margin-left: 16px;">
+                                <li>Week 4: First checkpoint - fix or continue?</li>
+                                <li>Week 8: Final decision - go/pivot/stop?</li>
+                                <li>Budget: €50K max for beta phase</li>
+                                <li>Timeline: 60 days max, no extensions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Scenario B - Beta Succeeds -->
+            <div class="slide-content">
+                <h2 style="margin-bottom: 12px;">Scenario B: Beta Validates - Scale Plan</h2>
+                <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 24px;">Strong signals → Aggressive but controlled growth</p>
+
+                <div class="two-column" style="gap: 24px;">
+                    <div>
+                        <h3 style="color: var(--green); margin-bottom: 16px; font-size: 18px;">✅ Success Signals</h3>
+
+                        <div style="background: rgba(0, 255, 136, 0.1); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">GO SIGNALS:</h4>
+                            <ul style="font-size: 12px; line-height: 1.7; list-style: none; padding: 0;">
+                                <li>✓ Pass rate 20-30%</li>
+                                <li>✓ Retry rate >40%</li>
+                                <li>✓ NPS >40</li>
+                                <li>✓ CAC <$20</li>
+                                <li>✓ LTV:CAC >20:1</li>
+                                <li>✓ Infrastructure stable</li>
+                            </ul>
+                        </div>
+
+                        <h4 style="margin-bottom: 10px; font-size: 14px;">Scale Strategy (Month 7-12):</h4>
+
+                        <div style="font-size: 12px; line-height: 1.6; margin-bottom: 10px;">
+                            <strong style="color: var(--green);">Month 7:</strong> Public launch prep (marketing, scale infrastructure 10×, CS support, legal review)
+                        </div>
+
+                        <div style="font-size: 12px; line-height: 1.6; margin-bottom: 10px;">
+                            <strong style="color: var(--green);">Month 8-9:</strong> Public launch → 1,000 users (acquisition campaigns, influencer partnerships)
+                        </div>
+
+                        <div style="font-size: 12px; line-height: 1.6;">
+                            <strong style="color: var(--green);">Month 10-12:</strong> Scale to 5,000 users (expand channels, referral program, €250K revenue)
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--yellow); margin-bottom: 16px; font-size: 18px;">Resource Needs</h3>
+
+                        <div style="background: rgba(251, 191, 36, 0.1); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">Team Expansion (Month 7-12):</h4>
+                            <ul style="font-size: 11px; line-height: 1.6; margin-left: 16px;">
+                                <li>+1 Tech Lead, +2 Developers</li>
+                                <li>+1 Growth/Community Manager</li>
+                                <li>+1 Customer Support, +1 Data Analyst</li>
+                            </ul>
+                            <p style="margin-top: 8px; font-size: 12px;"><strong>Total team: 12 → 17 people</strong></p>
+                        </div>
+
+                        <div style="background: rgba(0, 255, 136, 0.1); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">Capital Needs:</h4>
+                            <ul style="font-size: 11px; line-height: 1.6; margin-left: 16px;">
+                                <li>Marketing: €100K (months 8-12)</li>
+                                <li>Team salaries: €300K (5 new hires)</li>
+                                <li>Infrastructure: €30K, Contingency: €70K</li>
+                            </ul>
+                            <p style="margin-top: 8px; font-size: 12px;"><strong>Total: €500K for scale phase</strong></p>
+                        </div>
+
+                        <div style="background: rgba(26, 107, 255, 0.1); padding: 16px; border-radius: 8px;">
+                            <h4 style="margin-bottom: 10px; font-size: 14px;">Revenue (Month 12):</h4>
+                            <ul style="font-size: 11px; line-height: 1.6; margin-left: 16px;">
+                                <li>5,000 users × 2.5 attempts × €99 = <strong>€1.24M</strong></li>
+                                <li>~310 funded traders</li>
+                                <li>Profit share (20%): <strong>€25K/month</strong></li>
+                            </ul>
+                            <p style="margin-top: 8px; font-size: 12px;"><strong>Month 12 revenue: ~€125K</strong></p>
+                        </div>
+
+                        <div style="padding: 12px; background: rgba(255, 59, 48, 0.1); border-left: 4px solid #FF3B30; border-radius: 8px; margin-top: 12px;">
+                            <h4 style="font-size: 12px; margin-bottom: 4px;">Risks During Scale:</h4>
+                            <p style="font-size: 10px; line-height: 1.5;">Quality degradation, infrastructure breaking, regulatory attention, fraud at scale. <strong>Mitigation:</strong> Controlled growth gates, load testing, proactive legal, enhanced fraud detection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Section 6: Validation -->
         <div class="section" id="validation">
             <!-- Slide 1: Success Signals -->
             <div class="slide-content">
                 <h2 style="margin-bottom: 8px;">Success Signals (Month 6)</h2>
-                <p style="text-align: center; font-size: 13px; color: var(--medium-grey); margin-bottom: 16px;">
-                    Key indicators that validate product-market fit and business viability
+                <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 24px;">
+                    Key indicators that product-market fit works and business is viable
                 </p>
-                <div style="max-width: 1000px; margin: 0 auto;">
-                    <div class="box box-green" style="padding: 20px; margin-bottom: 14px;">
-                        <h3 style="color: var(--yellow); margin-bottom: 14px; font-size: 19px;">Core Success Metrics</h3>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">Challenge Validation</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">Pass rate calibrated</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Balanced difficulty (not too easy, not impossible)</div>
-                            </div>
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">User Retention</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">Strong 2nd attempts</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Users retry after failing, low churn</div>
-                            </div>
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">User Acquisition</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">Low CAC</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Cost-effective organic-first growth</div>
-                            </div>
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">Unit Economics</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">Strong LTV:CAC</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Positive cohort economics</div>
-                            </div>
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">Funded Trader Success</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">Active trading</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Funded accounts actively using platform</div>
-                            </div>
-                            <div style="padding: 10px; background: rgba(0, 255, 136, 0.05); border-radius: 8px;">
-                                <div style="font-size: 14px; color: var(--medium-grey); margin-bottom: 4px;">Platform Stability</div>
-                                <div style="font-size: 19px; font-weight: 700; color: var(--green);">No major issues</div>
-                                <div style="font-size: 13px; color: var(--medium-grey); margin-top: 3px;">Stable tech, reliable Polymarket integration</div>
-                            </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1100px; margin: 0 auto 24px;">
+                    <!-- Metric 1 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">1. Challenge Validation</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> Pass rate 20-30%</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> 15-35% acceptable</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> &lt;10% or &gt;40%</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">After 50+ completed challenges</div>
                         </div>
                     </div>
 
-                    <div class="box box-yellow" style="padding: 18px;">
-                        <h3 style="color: var(--yellow); margin-bottom: 10px; font-size: 17px;">Product-Market Fit Signals</h3>
-                        <p style="font-size: 15px; line-height: 1.6; color: var(--light-grey);">
-                            Beyond metrics, we look for qualitative signs: <strong>Organic growth</strong> (users finding us naturally),
-                            <strong>community buzz</strong> on Reddit/Twitter/Discord, <strong>positive sentiment</strong> in early user discussions,
-                            and <strong>word-of-mouth referrals</strong>. These indicate genuine user interest beyond paid acquisition.
-                        </p>
+                    <!-- Metric 2 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">2. User Retention</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> Retry rate &gt;40%</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> &gt;30% acceptable</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> &lt;20%</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">Revenue engine - retry rate is critical</div>
+                        </div>
                     </div>
+
+                    <!-- Metric 3 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">3. User Acquisition</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> CAC &lt;$20</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> &lt;$30 acceptable</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> &gt;$50</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">Organic-first must work</div>
+                        </div>
+                    </div>
+
+                    <!-- Metric 4 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">4. Unit Economics</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> LTV:CAC &gt;20:1</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> &gt;15:1 acceptable</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> &lt;10:1</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">LTV = avg attempts × €99 + profit share</div>
+                        </div>
+                    </div>
+
+                    <!-- Metric 5 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">5. Funded Trader Success</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> Monthly activity &gt;80%</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> &gt;60% acceptable</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> &lt;40%</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">Active trading = profit share revenue</div>
+                        </div>
+                    </div>
+
+                    <!-- Metric 6 -->
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">6. Platform Stability</h3>
+                        <div style="font-size: 13px; line-height: 1.7;">
+                            <div style="margin-bottom: 6px;"><strong style="color: var(--green);">✓ Target:</strong> 99.5% uptime, &lt;2s latency</div>
+                            <div style="margin-bottom: 6px; color: var(--medium-grey);"><strong>~ Minimum:</strong> 98% uptime, &lt;5s latency</div>
+                            <div style="margin-bottom: 6px; color: #FF3B30;"><strong>✗ Fail:</strong> Frequent outages, &gt;10s</div>
+                            <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">Tech reliability is table stakes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metric 7 - Full width -->
+                <div style="max-width: 1100px; margin: 0 auto 24px;">
+                    <div style="background: var(--card-bg); padding: 18px; border-radius: 12px; border-left: 4px solid var(--green);">
+                        <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--green);">7. NPS Score</h3>
+                        <div style="font-size: 13px; line-height: 1.7; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                            <div><strong style="color: var(--green);">✓ Target:</strong> NPS &gt;40</div>
+                            <div style="color: var(--medium-grey);"><strong>~ Minimum:</strong> NPS &gt;20 acceptable</div>
+                            <div style="color: #FF3B30;"><strong>✗ Fail:</strong> NPS &lt;0</div>
+                        </div>
+                        <div style="margin-top: 10px; font-size: 12px; color: var(--medium-grey); font-style: italic;">User sentiment drives word-of-mouth growth</div>
+                    </div>
+                </div>
+
+                <div style="max-width: 1100px; margin: 0 auto 16px; padding: 16px; background: rgba(0, 255, 136, 0.1); border-radius: 12px;">
+                    <h3 style="font-size: 16px; margin-bottom: 10px; color: var(--yellow);">Qualitative Product-Market Fit Signals:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 13px;">
+                        <div>• Organic growth - users find us without ads</div>
+                        <div>• Community buzz - Reddit, Discord discussions</div>
+                        <div>• Positive sentiment - early users love it</div>
+                        <div>• Word-of-mouth - referrals happen naturally</div>
+                    </div>
+                </div>
+
+                <div style="max-width: 1100px; margin: 0 auto; padding: 14px; background: rgba(251, 191, 36, 0.1); border-left: 4px solid var(--yellow); border-radius: 8px;">
+                    <strong style="font-size: 14px;">Go/No-Go Framework:</strong> <span style="font-size: 13px;">These signals are our decision criteria for scale. If we see these → full speed. If not → iterate or pivot.</span>
                 </div>
             </div>
 
-            <!-- Slide 2: Key Risks & When to Stop -->
+                        <!-- Slide 2: Key Risks & When to Stop -->
             <div class="slide-content">
                 <h2 style="margin-bottom: 12px;">Key Risks & When to Stop</h2>
                 <p style="text-align: center; font-size: 14px; color: var(--medium-grey); margin-bottom: 20px;">
