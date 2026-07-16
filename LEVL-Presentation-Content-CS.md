@@ -302,40 +302,6 @@ Příležitost je jasná - vzít tyto ověřené elementy a zkombinovat je nový
 
 # 🎨 SEKCE 2: PRODUKT
 
----
-
-# SLIDE 7: BRAND IDENTITY
-
-**Headline:** Brand Identity: LEVL
-
-**Vizuál:** Logo, barvy, positioning
-
-**Levý sloupec - Why LEVL?**
-- "Level up" = progression, gaming culture
-- Oslovuje Gen Z/Millennials (76% trhu)
-- Oddělená značka od FTMO (chrání parent)
-- Moderní, tech-forward positioning
-
-**Pravý sloupec - Brand Colors:**
-- **Electric Green #00FF88** - Výhra, růst, success
-- **Cyber Yellow #FBBF24** - Premium, achievement
-- **Deep Black #0A0A0F** - Moderní, sophisticated
-
-**Co říct:**
-
-Teď přejdeme k produktu. A začneme brand identitou - LEVL.
-
-Proč LEVL? "Level up" - to rezonuje s gaming kulturou, s progression mindsete m. To je jazyk, kterému Gen Z a Millennialové rozumí. A to je 76 procent našeho trhu.
-
-Moderní pravopis - LEVL, ne LEVEL - tech-forward, rozlišitelné, zapamatovatelné.
-
-A strategicky - to je oddělená značka od FTMO. Proč? Sport není trading. Vnímání je jiné. Gambling versus serious trading. Takhle chráníme FTMO brand. Umožňujeme cílit na jinou demografii. A FTMO může zůstat v pozadí jako infrastruktura.
-
-Vizuální identita - tady vidíte ty barvy. Electric Green - to je výhra, růst, success. Cyber Yellow - premium, achievement. Deep Black - sophisticated, moderní.
-
-Celkově výrazná, mladá, energická značka postavená pro sportovní komunitu.
-
----
 
 # SLIDE 8: USER ACQUISITION STRATEGY
 
@@ -465,42 +431,49 @@ Cíl je jasný - vysoké LTV přes retries plus funded trader retention.
 - **League Page:** Fixtures, Results, Standings
 - **Profile:** Balance, History, Settings
 
-**Key Features:**
-- 🔴 **Live & Pre-match Markets:** Full support for both live (in-play) and pre-match betting - live is 50%+ of volume
-- 📊 **Real-time Probabilities:** Live probability movements & scores - critical for live betting dominance
-- 🎯 **Market Types:** Moneyline, spread, totals (over/under), specialized outcomes
-- 🔔 **Smart Notifications:** Match starts, live score updates, significant probability shifts, market results
+**MUST-HAVE Features (Product Cannot Launch Without These):**
+- 🔴 **Live & Pre-match Markets:** Full support for both - live is 50%+ of volume, absolute requirement
+- 📊 **Real-time Probabilities:** Live probability movements & scores - core value proposition
+- 💰 **Challenge System:** Two-phase evaluation (Challenge + Verification) - the entire business model
+- 📈 **Balance Tracking:** Real-time P&L, risk management metrics (daily/total drawdown)
+- 🔐 **Auth & KYC:** User authentication, basic KYC for regulatory compliance
+- 🔗 **Polymarket Integration:** Direct API connection for market data & trade execution
+
+**HIGH-PRIORITY Features (Critical for User Experience):**
+- 🎯 **Market Types:** Moneyline, spread, totals (over/under) - industry standard
+- 🔔 **Smart Notifications:** Match starts, live score updates, probability shifts - drives engagement
+- 📊 **Performance Dashboard:** Win rate, ROI by sport, challenge progress
+- 🏆 **Trending Page:** Most traded matches - helps discovery, reduces friction
+
+**NICE-TO-HAVE (Can Be Added Post-Launch):**
+- 📰 **News Feed:** Match previews, injury updates
+- 🎨 **Advanced UI customization:** Themes, layouts
+- 🌐 **Multi-language:** Start with English only
 
 **Pravý sloupec - Mockup:**
 [Obrázek: levl_hero_mybets.png - My Bets obrazovka]
 
 **Co říct:**
 
-MVP for launch. Tohle je scope, se kterým budeme startovat.
+MVP for launch. Pojďme si ujasnit co MUSÍ být, co je critical, a co můžeme přidat později.
 
-Všechny Polymarket sporty. Ne jen tři, všechny. Fotbal, basketbal, MMA, tenis, americký fotbal, baseball, hokej, kriket, golf, esports, Formula 1, kulečník, šachy, lacrosse, volejbal, pickleball. Zhruba 20 sportů.
+MUST-HAVE features - bez těchto nemůžeme launchovat vůbec.
 
-Proč všechny? Polymarket už má ta data. Uživatelé chtějí choice. To je competitive advantage.
+Live a pre-match markets - absolutní requirement. 50 procent plus volume je live, nemůžeme to ignorovat. Real-time probabilities - to je náš core value proposition, ne odds jako bookmakers, ale live probability movements.
 
-Platform - mobile apps, iOS a Android. Web jen na landing pages, educational content, acquisition.
+Challenge system - dvě fáze, Challenge plus Verification. To je celý byznys model. Balance tracking - real-time P&L, risk management metriky, daily a total drawdown. Uživatel musí vidět kde je, jestli je safe nebo blízko limitu.
 
-Core pages - Match List, seznam live a upcoming zápasů napříč všemi sporty. Trending - nová stránka, ukazuje most traded matches, pomáhá s discovery. Prop Detail - match winner, tournament winner, player props, futures. League Page - fixtures, výsledky, tabulky. Profile - balance, history, settings.
+Auth a KYC - autentizace, základní KYC pro regulatory compliance. Polymarket integration - direct API pro market data a trade execution. Bez toho prostě nefunguje nic.
 
-Team pages NEJSOU v MVP. To až později kvůli data complexity.
+HIGH-PRIORITY features - critical pro user experience, ale technicky bychom mohli launchovat bez nich.
 
-A tady key features - to je důležité.
+Market types - moneyline, spread, totals. Industry standard. Smart notifications - match starts, live updates, probability shifts. To drive engagement. Performance dashboard - win rate, ROI by sport, challenge progress. Uživatel potřebuje vidět jak si vede. Trending page - most traded matches, pomáhá s discovery.
 
-Live AND pre-match markets. Full support pro oboje. Proč? Protože live je 50 procent plus všeho volume. Roste třikrát rychleji. Nemůžeme launchovat bez live podpory.
+NICE-TO-HAVE - můžeme přidat post-launch.
 
-Real-time probabilities. Ne odds. Live probability movements jsou kritické pro live betting UX. To je diferenciátor.
+News feed, advanced UI customization, multi-language support. Start s English only.
 
-Smart notifications - match starts plus live updates. Score changes, probability shifts, market results. Must-have pro engagement.
-
-Market types - moneyline, spread, totals, specialized outcomes. Polymarket standardy.
-
-Vpravo vidíte mockup - My Bets screen. Clean, moderní, probability-based design.
-
-Scope je zaměřený - všechny sporty, live plus pre-match support, ale simple pages. Žádné fancy stats nebo lineups v MVP. To až později.
+Scope je zaměřený - všechny Polymarket sporty, live plus pre-match, ale prioritizujeme must-have features. Žádné fancy stats v MVP. Focus na funkčnost, ne lesk.
 
 ---
 
@@ -734,42 +707,113 @@ Všechny čtyři musí fungovat. Pokud některý element selže, business nefung
 
 # SLIDE 16: RISKS & MITIGATION
 
-**Headline:** Risks & Mitigation
+**Headline:** Risks & Mitigation Strategy
+
+**Subtitle:** Comprehensive risk framework with concrete mitigation plans
 
 **Levý sloupec - Financial Risks:**
 
-**Regulatory Compliance**
-Sports betting laws vary by jurisdiction
+**1. Regulatory Compliance**
+- **Risk:** Sports betting laws vary by jurisdiction; potential legal challenges
+- **Impact:** High - could block operations in key markets
+- **Mitigation:**
+  - ✅ **Demo Capital Model:** Not real-money gambling, skill evaluation only
+  - ✅ **Geographic Filtering:** Block restricted states/countries (NY, TX initially)
+  - ✅ **Legal Counsel:** Engage sports betting lawyers in Q1
+  - ✅ **Terms of Service:** Clear user agreements, disclaimer language
+  - ✅ **KYC/AML:** Identity verification, age checks (18+)
+- **Monitoring:** Monthly legal landscape review, regulatory news alerts
+- **Fallback:** If major market closes, pivot to pure education/analytics product
 
-**Capital Liability**
-Funded accounts create real liability exposure
+**2. Capital Liability**
+- **Risk:** Funded accounts create real liability exposure; must pay successful traders
+- **Impact:** Medium - could strain cash flow if pass rate exceeds projections
+- **Mitigation:**
+  - ✅ **Conservative Pass Rate:** Target 20-30%, monitor closely
+  - ✅ **Strict Risk Management:** Max drawdown limits, auto-stop-loss
+  - ✅ **Challenge Calibration:** Data-driven rule adjustments based on results
+  - ✅ **Reserve Fund:** 20% of challenge fees set aside for payouts
+  - ✅ **Monthly Payout Cycle:** 14-day processing gives cash flow buffer
+- **Monitoring:** Weekly pass rate tracking, real-time liability dashboard
+- **Fallback:** Tighten challenge rules if pass rate exceeds 35%; pause funding temporarily
 
-**Fraud & Abuse**
-Coordinated betting, account manipulation
+**3. Fraud & Abuse**
+- **Risk:** Coordinated betting, multi-accounting, exploiting system loopholes
+- **Impact:** High - fraud kills economics and reputation
+- **Mitigation:**
+  - ✅ **FTMO Fraud Detection:** Leverage existing pattern detection algorithms
+  - ✅ **KYC at Entry:** Identity verification before challenge starts
+  - ✅ **Behavioral Analysis:** Detect abnormal betting patterns, coordinated activity
+  - ✅ **IP/Device Tracking:** Multi-account detection
+  - ✅ **Manual Review:** Flag suspicious accounts for human investigation
+  - ✅ **Community Reporting:** Users can report suspected abuse
+- **Monitoring:** Daily fraud alerts, weekly pattern analysis
+- **Fallback:** Enhanced verification (video call, document proof) for flagged accounts
 
 **Pravý sloupec - Operational Risks:**
 
-**Sports Data Reliability**
-API downtime, incorrect odds, delayed updates
+**4. Sports Data Reliability**
+- **Risk:** API downtime, incorrect odds, delayed updates during live events
+- **Impact:** Medium - degrades UX, trust issues if data is wrong
+- **Mitigation:**
+  - ✅ **Tier-1 Providers:** Partner with Opta, Stats Perform (99.9% uptime SLAs)
+  - ✅ **Multi-Source Verification:** Cross-check data from 2+ providers
+  - ✅ **Fallback Feeds:** Automatic switchover if primary feed fails
+  - ✅ **Data Quality Monitoring:** Real-time alerts on anomalies
+  - ✅ **Manual Override:** Ops team can pause markets if data is questionable
+- **Monitoring:** Real-time data quality dashboard, latency tracking
+- **Fallback:** Pause live betting temporarily, switch to pre-match only
 
-**Platform Scalability**
-High-volume trading during live events
+**5. Platform Scalability**
+- **Risk:** High-volume traffic during live events (NBA Finals, World Cup) overwhelms infrastructure
+- **Impact:** Medium - downtime during peak moments damages reputation
+- **Mitigation:**
+  - ✅ **FTMO Cloud Infrastructure:** Proven scalability from forex trading volumes
+  - ✅ **Auto-Scaling:** AWS/GCP dynamic resource allocation
+  - ✅ **Load Testing:** Simulate 10× expected traffic before launch
+  - ✅ **CDN for Assets:** Cloudflare for static content delivery
+  - ✅ **Database Optimization:** Caching layers, read replicas
+  - ✅ **Gradual Rollout:** Controlled user growth to stress-test incrementally
+- **Monitoring:** Real-time performance metrics, server load alerts
+- **Fallback:** Queue system during extreme peaks; pre-match betting only if live fails
 
-**Polymarket Dependency**
-Reliance on Polymarket API availability and sports market coverage
+**6. Polymarket Dependency**
+- **Risk:** Reliance on Polymarket API availability and sports market coverage; single point of failure
+- **Impact:** Critical - if Polymarket goes down or restricts access, business model breaks
+- **Mitigation:**
+  - ✅ **Multi-Platform Strategy:** Integrate Kalshi by Month 6
+  - ✅ **API Fallbacks:** Automatic switchover to backup platform
+  - ✅ **Direct Partnership:** Engage Polymarket team for priority support
+  - ✅ **Market Coverage Analysis:** Start with high-liquidity markets only
+  - ✅ **Diversified Sports:** Spread risk across 20+ sports
+  - ✅ **Future-Proofing:** Architecture supports adding new platforms (PredictIt, Insight, etc.)
+- **Monitoring:** Daily API health checks, market liquidity tracking
+- **Fallback:** If Polymarket shuts down, pivot fully to Kalshi; if P2P model collapses entirely, explore traditional sportsbook partnerships or pivot to pure analytics
 
-**Mitigation Strategy (dole, zelený box):**
-> **Mitigation Strategy:** Leverage FTMO's proven compliance framework, fraud detection systems, cloud infrastructure, and risk management expertise. Partner with tier-1 sports data providers for reliability.
+**FTMO Infrastructure Advantage (dole, zelený box):**
+> **Leveraging FTMO Capabilities:** Proven compliance framework (KYC/AML systems), fraud detection algorithms (battle-tested on $500M+ revenue), cloud infrastructure (scalable from day 1), risk management expertise (10+ years experience), operational know-how (customer support, finance, accounting ready). We're not building from zero - massive head start.
 
 **Co říct:**
 
-Risks a mitigation. Máme dva typy rizik - financial a operational.
+Risks and mitigation strategy. Comprehensive risk framework s konkrétními mitigation plans. Máme šest hlavních rizik, tři financial a tři operational.
 
-Financial risks. Regulatory compliance - sports betting laws různé podle jurisdikce. Mitigation - demo capital model, avoid restricted states, legal counsel. Capital liability - funded accounts jsou real liability. Mitigation - risk management rules, max drawdown limits, stop-loss. Fraud a abuse - coordinated betting, multi-accounting. Mitigation - FTMO fraud detection systems, KYC AML, pattern detection.
+Financial risks.
 
-Operational risks. Sports data reliability - API issues, incorrect data. Mitigation - tier-1 providers jako Opta, Stats Perform, multi-source verification. Platform scalability - high traffic během live events. Mitigation - FTMO cloud infrastructure, load testing, auto-scaling. Polymarket dependency - single platform risk. Mitigation - multi-platform strategy, Polymarket plus Kalshi, API fallbacks.
+Prvý - regulatory compliance. Sports betting zákony různé podle jurisdikce, potential legal challenges. Impact high - could block operations v key markets. Mitigation - demo capital model, není to real-money gambling, skill evaluation only. Geographic filtering - block restricted states jako New York, Texas initially. Legal counsel - sports betting lawyers v Q1. Terms of service jasné. KYC AML - identity verification, age checks. Monitoring - monthly legal landscape review. Fallback - pokud major market closes, pivot to pure education analytics product.
 
-Key mitigation je FTMO infrastruktura. Proven compliance framework, fraud detection už existuje, cloud infrastructure ready, risk management expertise. Nezačínáme od nuly - leveraging FTMO capabilities je huge advantage.
+Druhý - capital liability. Funded accounts create real liability exposure, musíme platit successful traders. Impact medium - could strain cash flow pokud pass rate exceeds projections. Mitigation - conservative pass rate target 20-30 procent, monitor closely. Strict risk management - max drawdown limits, auto-stop-loss. Challenge calibration - data-driven rule adjustments. Reserve fund - 20 procent challenge fees set aside pro payouts. Monthly payout cycle - 14 day processing dává cash flow buffer. Monitoring - weekly pass rate tracking, real-time liability dashboard. Fallback - tighten challenge rules pokud pass rate exceeds 35 procent, pause funding temporarily.
+
+Třetí - fraud and abuse. Coordinated betting, multi-accounting, exploiting system loopholes. Impact high - fraud kills economics a reputation. Mitigation - FTMO fraud detection leverage existing pattern detection algorithms. KYC at entry - identity verification before challenge starts. Behavioral analysis - detect abnormal betting patterns, coordinated activity. IP device tracking - multi-account detection. Manual review - flag suspicious accounts. Community reporting. Monitoring - daily fraud alerts, weekly pattern analysis. Fallback - enhanced verification, video call, document proof pro flagged accounts.
+
+Operational risks.
+
+Čtvrtý - sports data reliability. API downtime, incorrect odds, delayed updates during live events. Impact medium - degrades UX, trust issues pokud data are wrong. Mitigation - tier-1 providers partnership, Opta, Stats Perform, 99.9 procent uptime SLAs. Multi-source verification - cross-check data from two plus providers. Fallback feeds - automatic switchover pokud primary feed fails. Data quality monitoring - real-time alerts na anomalies. Manual override - ops team může pause markets pokud data jsou questionable. Monitoring - real-time data quality dashboard, latency tracking. Fallback - pause live betting temporarily, switch to pre-match only.
+
+Pátý - platform scalability. High-volume traffic during live events, NBA Finals, World Cup, overwhelms infrastructure. Impact medium - downtime during peak moments damages reputation. Mitigation - FTMO cloud infrastructure, proven scalability from forex trading volumes. Auto-scaling - AWS GCP dynamic resource allocation. Load testing - simulate deset× expected traffic before launch. CDN for assets - Cloudflare for static content. Database optimization - caching layers, read replicas. Gradual rollout - controlled user growth to stress-test incrementally. Monitoring - real-time performance metrics, server load alerts. Fallback - queue system during extreme peaks, pre-match betting only pokud live fails.
+
+Šestý - Polymarket dependency. Reliance on Polymarket API availability a sports market coverage, single point of failure. Impact critical - pokud Polymarket goes down or restricts access, business model breaks. Mitigation - multi-platform strategy, integrate Kalshi by month 6. API fallbacks - automatic switchover to backup platform. Direct partnership - engage Polymarket team for priority support. Market coverage analysis - start s high-liquidity markets only. Diversified sports - spread risk across 20 plus sportů. Future-proofing - architecture supports adding new platforms, PredictIt, Insight. Monitoring - daily API health checks, market liquidity tracking. Fallback - pokud Polymarket shuts down, pivot fully to Kalshi. Pokud P2P model collapses entirely, explore traditional sportsbook partnerships or pivot to pure analytics.
+
+FTMO infrastructure advantage. Leveraging FTMO capabilities. Proven compliance framework - KYC AML systems already exist. Fraud detection algorithms - battle-tested on 500 milionů plus revenue. Cloud infrastructure - scalable from day 1. Risk management expertise - deset plus years experience. Operational know-how - customer support, finance, accounting ready. Nezačínáme od nuly. Massive head start.
 
 ---
 
@@ -810,7 +854,7 @@ Finance/Accounting, Cloud Infrastructure, Customer Support (early phase), Fraud 
 
 Building the team. Tři fáze.
 
-Phase 1 - Foundation, měsíc 1 až 2. Sedm lidí. PM - to jsem já, strategy, specs, roadmap. Čtyři developers - jeden backend Node.js Polymarket API, tři mobile React Native iOS Android. Proč čtyři? Všechny Polymarket sporty, větší scope. Designer - full-time od začátku, brand consistency, UX kvalita. QA Engineer - od začátku, kvalita je critical, testing všech sportů.
+Phase 1 - Foundation, měsíc 1 až 2. Sedm lidí. PM - to jsem já, strategy, specs, roadmap. Čtyři developers - jeden backend Node.js Polymarket API, tři mobile React Native iOS Android. Proč čtyři? Všechny Polymarket sporty, větší scope. Designer - full-time od začátku, UI/UX quality a design consistency. QA Engineer - od začátku, kvalita je critical, testing všech sportů.
 
 Phase 2 - Early Growth, měsíc 3 až 5. Osm lidí. Core team pokračuje plus marketing manager. Beta launch prep, acquisition channels, content.
 
@@ -857,11 +901,278 @@ Post Month 6 - public launch s acquisition campaigns, scale to 1K plus users, re
 
 ---
 
+
+# SLIDE 19: BETA LAUNCH STRATEGY
+
+**Headline:** Beta Launch Strategy
+
+**Subtitle:** 50-100 users, 60 days, critical validation phase
+
+**Levý sloupec - Beta Goals:**
+
+**Primary Objectives:**
+1. **Validate Challenge Calibration** - Is pass rate 20-30%? Are rules fair but challenging?
+2. **Test Product-Market Fit** - Do users want to retry? High engagement?
+3. **Validate Unit Economics** - Does LTV projection hold? Is CAC achievable?
+4. **Stress-Test Infrastructure** - Can we handle live betting load? Polymarket API stable?
+
+**Beta Metrics to Track:**
+- Challenge completion rate
+- Retry rate after failure
+- Daily/weekly active users
+- Average session length
+- NPS score
+- CAC (estimated from beta acquisition)
+- Time to complete challenge
+- Drop-off points in funnel
+
+**Pravý sloupec - Beta Execution:**
+
+**Week 1-2: Onboarding (10-20 users)**
+- Invite analytical bettors from personal network
+- Close monitoring, daily feedback calls
+- Fix critical bugs immediately
+
+**Week 3-6: Scale to 50 (30-50 users)**
+- Expand to Reddit, Discord invites
+- Weekly surveys, bi-weekly user interviews
+- Iterate on UX pain points
+
+**Week 7-8: Stress Test (50-100 users)**
+- Push acquisition, test at higher volume
+- Monitor infrastructure performance
+- Validate challenge economics at scale
+
+**Decision Point (Week 8):**
+✅ **GO:** Strong signals → Prep for public launch
+❌ **ITERATE:** Mixed signals → Pivot, fix, re-test
+🛑 **STOP:** Failed validation → Kill or major pivot
+
+**Co říct:**
+
+Beta launch strategy. Tohle je kritická validační fáze. 50 až 100 users, 60 dní.
+
+Primary objectives. Zaprvé - validate challenge calibration. Je pass rate 20 až 30 procent? Jsou pravidla fair ale challenging? Zadruhé - test product-market fit. Chtějí uživatelé retry? High engagement? Zatřetí - validate unit economics. Drží LTV projekce? Je CAC achievable? Začtvrté - stress-test infrastructure. Zvládneme live betting load? Je Polymarket API stable?
+
+Beta metriky co sledujeme. Challenge completion rate, retry rate after failure, daily weekly active users, average session length, NPS score, CAC estimated, time to complete challenge, drop-off points in funnel.
+
+Beta execution. Week 1-2, onboarding, 10 až 20 users. Invite analytical bettors z personal network. Close monitoring, daily feedback calls. Fix critical bugs immediately.
+
+Week 3-6, scale to 50, 30 až 50 users. Expand to Reddit, Discord invites. Weekly surveys, bi-weekly user interviews. Iterate on UX pain points.
+
+Week 7-8, stress test, 50 až 100 users. Push acquisition, test at higher volume. Monitor infrastructure performance. Validate challenge economics at scale.
+
+Decision point week 8. GO - strong signals, prep for public launch. ITERATE - mixed signals, pivot, fix, re-test. STOP - failed validation, kill or major pivot.
+
+---
+
+# SLIDE 20: SCENARIO A - BETA FAILS
+
+**Headline:** Scenario A: Beta Doesn't Validate
+
+**Subtitle:** What if the metrics don't hit targets? Clear decision framework.
+
+**Levý sloupec - Failure Signals:**
+
+**🚨 KILL SIGNALS (Stop Immediately):**
+- Pass rate >50% (challenge too easy, economics broken)
+- Pass rate <10% (impossible, users give up)
+- Retry rate <20% (users don't believe in it)
+- NPS <0 (users actively dislike product)
+- Major regulatory blocker discovered
+- Polymarket shuts down or restricts access
+- Systematic fraud we can't prevent
+
+**⚠️ PIVOT SIGNALS (Major Changes Needed):**
+- Pass rate 35-45% (needs recalibration)
+- Retry rate 20-30% (lukewarm interest)
+- NPS 0-20 (product works but not loved)
+- CAC >$50 (acquisition too expensive)
+- High drop-off at specific funnel point
+- Polymarket liquidity issues on key sports
+
+**Pravý sloupec - Pivot Options:**
+
+**If Challenge Calibration is Off:**
+- Adjust profit targets (15% → 10% or 20%)
+- Change duration (30 days → 45 or 20 days)
+- Modify risk limits
+- Add more sports diversity requirements
+
+**If Acquisition is Too Expensive:**
+- Pivot target market (crypto natives vs analytical bettors)
+- Change channels (focus on organic vs paid)
+- Adjust challenge pricing (€99 → €49 or €149)
+- Add referral incentives
+
+**If Product-Market Fit is Weak:**
+- Simplify onboarding
+- Add more gamification
+- Improve UX on identified pain points
+- Add educational content
+
+**If Infrastructure Can't Handle Load:**
+- Scale back sports coverage temporarily
+- Optimize Polymarket API usage
+- Add caching layers
+- Delay live betting, start with pre-match only
+
+**Decision Framework:**
+- Week 4: First checkpoint - fix or continue?
+- Week 8: Final decision - go/pivot/stop?
+- Budget: €50K max for beta phase
+- Timeline: 60 days max, no extensions
+
+**Co říct:**
+
+Scenario A - beta doesn't validate. Co když metriky nedosáhnou targets? Potřebujeme clear decision framework.
+
+KILL SIGNALS - stop immediately.
+
+Pass rate přes 50 procent - challenge moc easy, economics broken. Pass rate pod 10 procent - impossible, users give up. Retry rate pod 20 procent - uživatelé nevěří že to má smysl. NPS pod nulu - users actively dislike product. Major regulatory blocker. Polymarket shutdown. Systematic fraud we can't prevent.
+
+Tohle jsou deal-breakers. Pokud vidíme tyto signály, zastavujeme.
+
+PIVOT SIGNALS - major changes needed.
+
+Pass rate 35-45 procent - needs recalibration. Retry rate 20-30 procent - lukewarm interest. NPS 0-20 - product works but not loved. CAC přes 50 dolarů - acquisition too expensive. High drop-off at specific funnel point. Polymarket liquidity issues.
+
+Tohle znamená product má problémy, ale jsou fixable. Potřebujeme pivot.
+
+Pivot options.
+
+Challenge calibration is off - adjust profit targets, change duration, modify risk limits. Acquisition too expensive - pivot target market, change channels, adjust pricing, add referrals. Product-market fit weak - simplify onboarding, add gamification, improve UX, add education. Infrastructure can't handle - scale back sports, optimize API, add caching, delay live betting.
+
+Decision framework. Week 4 - first checkpoint, fix or continue? Week 8 - final decision, go pivot stop? Budget - 50K euro max for beta. Timeline - 60 days max, no extensions.
+
+Musíme být disciplinovaní. Beta je test, ne garantovaný success.
+
+---
+
+# SLIDE 21: SCENARIO B - BETA SUCCEEDS
+
+**Headline:** Scenario B: Beta Validates - Scale Plan
+
+**Subtitle:** Strong signals → Aggressive but controlled growth
+
+**Levý sloupec - Success Signals:**
+
+**✅ GO SIGNALS (Proceed to Public Launch):**
+- Pass rate 20-30% ✓
+- Retry rate >40% ✓
+- NPS >40 ✓
+- CAC <$20 ✓
+- LTV:CAC >20:1 ✓
+- Infrastructure stable under load ✓
+- Organic growth happening ✓
+- Funded traders actively using platform ✓
+
+**Scale Strategy (Month 7-12):**
+
+**Month 7: Public Launch Prep**
+- Finalize marketing campaigns
+- Scale infrastructure (prepare for 10× traffic)
+- Onboard additional CS support
+- Legal/compliance final review
+- PR strategy & press outreach
+
+**Month 8-9: Public Launch → 1,000 Users**
+- Launch acquisition campaigns (Reddit, TikTok, YouTube)
+- Influencer partnerships activated
+- Monitor metrics daily
+- Quick iteration on feedback
+- Goal: 1,000 registered users, 250 active in challenge
+
+**Month 10-12: Scale to 5,000 Users**
+- Expand acquisition channels
+- Optimize conversion funnel
+- Launch referral program
+- First cohort reaching funded status
+- Revenue: ~€250K from challenge fees
+- Funded trader pool: ~250 users
+
+**Pravý sloupec - Resource Needs:**
+
+**Team Expansion (Month 7-12):**
+- +1 Tech Lead (manage growing eng team)
+- +2 Developers (scale features, optimize)
+- +1 Growth/Community Manager
+- +1 Customer Support
+- +1 Data Analyst (metrics, optimization)
+**Total team: 12 → 17 people**
+
+**Capital Needs:**
+- Marketing budget: €100K (months 8-12)
+- Team salaries: €300K (5 new hires, 5 months avg)
+- Infrastructure scaling: €30K
+- Contingency: €70K
+**Total: €500K for scale phase**
+
+**Revenue Projections (Month 12):**
+- 5,000 registered users
+- 2.5 avg attempts per user
+- 12,500 challenges × €99 = **€1.24M**
+- Funded traders (1,250 users × 25% pass = ~310)
+- Avg monthly profit per funded: €400
+- Profit share (20%): **€25K/month**
+**Month 12 revenue: ~€125K** (fees + share)
+
+**Risks During Scale:**
+- Quality degradation (move too fast)
+- Infrastructure breaking (unprepared for load)
+- Regulatory attention (flying under radar → visible)
+- Fraud at scale (harder to detect)
+- Polymarket can't handle our volume
+
+**Mitigation:**
+- Controlled growth gates (max users per week)
+- Infrastructure load testing before each phase
+- Proactive legal counsel engagement
+- Enhanced fraud detection from day 1
+- Direct Polymarket partnership discussions
+
+**Co říct:**
+
+Scenario B - beta validates. Strong signals. Aggressive but controlled growth.
+
+GO SIGNALS - proceed to public launch.
+
+Pass rate 20-30 procent check. Retry rate přes 40 procent check. NPS přes 40 check. CAC pod 20 dolarů check. LTV:CAC přes 20:1 check. Infrastructure stable check. Organic growth happening check. Funded traders actively using check.
+
+Všechny signály zelené. Jdeme dál.
+
+Scale strategy month 7-12.
+
+Month 7 - public launch prep. Finalize marketing campaigns, scale infrastructure prepare for 10× traffic, onboard CS support, legal compliance final review, PR strategy.
+
+Month 8-9 - public launch to 1,000 users. Launch acquisition campaigns Reddit TikTok YouTube, influencer partnerships activated, monitor metrics daily, quick iteration. Goal - 1,000 registered, 250 active in challenge.
+
+Month 10-12 - scale to 5,000 users. Expand acquisition channels, optimize conversion funnel, launch referral program, first cohort reaching funded status. Revenue - zhruba 250K euro from challenge fees. Funded trader pool - 250 users.
+
+Resource needs.
+
+Team expansion month 7-12. Plus Tech Lead, plus 2 developers, plus Growth Community Manager, plus Customer Support, plus Data Analyst. Total team 12 to 17 people.
+
+Capital needs. Marketing budget 100K euro months 8-12. Team salaries 300K, 5 new hires. Infrastructure scaling 30K. Contingency 70K. Total 500K euro for scale phase.
+
+Revenue projections month 12. 5,000 registered users, 2.5 avg attempts, 12,500 challenges krát 99 euro, to je 1.24 milion euro. Funded traders - 310 users, average monthly profit 400 euro, profit share 20 procent, to je 25K měsíčně. Month 12 revenue zhruba 125K euro.
+
+Risks during scale. Quality degradation pokud move too fast. Infrastructure breaking. Regulatory attention. Fraud at scale. Polymarket can't handle our volume.
+
+Mitigation. Controlled growth gates max users per week. Infrastructure load testing. Proactive legal counsel. Enhanced fraud detection. Direct Polymarket partnership discussions.
+
+Klíč je controlled aggression. Rychle, ale ne recklessly.
+
+---
+
+
+---
+
 # 📊 SEKCE 5: VALIDACE
 
 ---
 
-# SLIDE 19: SUCCESS SIGNALS (MONTH 6)
+# SLIDE 22: SUCCESS SIGNALS (MONTH 6)
 
 **Headline:** Success Signals (Month 6)
 
@@ -870,28 +1181,46 @@ Post Month 6 - public launch s acquisition campaigns, scale to 1K plus users, re
 **6 karet v 2×3 gridu:**
 
 **1. Challenge Validation**
-- Metrika: Pass rate calibrated
-- Popis: Balanced difficulty (not too easy, not impossible)
+- **Target:** Pass rate 20-30%
+- **Minimum:** 15-35% acceptable
+- **Fail:** <10% (impossible) or >40% (too easy)
+- **Evaluation:** After 50+ completed challenges
 
 **2. User Retention**
-- Metrika: Strong 2nd attempts
-- Popis: Users retry after failing, low churn
+- **Target:** Retry rate >40%
+- **Minimum:** >30% acceptable
+- **Fail:** <20% (users don't believe)
+- **Evaluation:** After 1st cohort completes
 
 **3. User Acquisition**
-- Metrika: Low CAC
-- Popis: Cost-effective organic-first growth
+- **Target:** CAC <$20
+- **Minimum:** <$30 acceptable
+- **Fail:** >$50 (unsustainable)
+- **Evaluation:** Weekly tracking
 
 **4. Unit Economics**
-- Metrika: Strong LTV:CAC
-- Popis: Positive cohort economics
+- **Target:** LTV:CAC >20:1
+- **Minimum:** >15:1 acceptable
+- **Fail:** <10:1 (weak economics)
+- **Calculation:** LTV = avg attempts × €99 + lifetime profit share
 
 **5. Funded Trader Success**
-- Metrika: Active trading
-- Popis: Funded accounts actively using platform
+- **Target:** Monthly activity >80%
+- **Minimum:** >60% acceptable
+- **Fail:** <40% (product not sticky)
+- **Evaluation:** Monthly cohort tracking
 
 **6. Platform Stability**
-- Metrika: No major issues
-- Popis: Stable tech, reliable Polymarket integration
+- **Target:** 99.5% uptime, <2s API latency
+- **Minimum:** 98% uptime, <5s latency
+- **Fail:** Frequent outages, >10s latency
+- **Evaluation:** Continuous monitoring
+
+**7. NPS Score (New)**
+- **Target:** NPS >40
+- **Minimum:** NPS >20 acceptable
+- **Fail:** NPS <0 (users dislike product)
+- **Evaluation:** Monthly survey
 
 **Product-Market Fit Signals (žlutý box dole):**
 > Beyond metrics, we look for qualitative signs: **Organic growth** (users finding us naturally), **community buzz** on Reddit/Twitter/Discord, **positive sentiment** in early user discussions, and **word-of-mouth referrals**. These indicate genuine user interest beyond paid acquisition.
@@ -920,7 +1249,7 @@ Tyto signály jsou náš go no-go pro scale. Pokud vidíme tyto signály, jdeme 
 
 ---
 
-# SLIDE 20: KEY RISKS & WHEN TO STOP
+# SLIDE 23: KEY RISKS & WHEN TO STOP
 
 **Headline:** Key Risks & When to Stop
 
@@ -979,11 +1308,11 @@ Philosophy - iteruj na produktu, zastav se na fundamentals. Product problems are
 
 ---
 
-# SLIDE 21: THE LEVL EDGE
+# SLIDE 24: COMPETITIVE ADVANTAGES
 
-**Headline:** The LEVL Edge
+**Headline:** Our Competitive Edge
 
-**Subtitle:** Why LEVL is positioned to win in sports prediction markets
+**Subtitle:** Why we're positioned to win in sports prediction markets
 
 **5 pilířů (5 boxů):**
 
@@ -1007,32 +1336,31 @@ Clear regulatory path, Polymarket/Kalshi available, large addressable market. Av
 
 **Co říct:**
 
-The LEVL edge. Proč jsme pozicionovaní vyhrát v sports prediction markets.
+Our competitive edge. Proč jsme pozicionovaní vyhrát v sports prediction markets.
 
-Pět pilířů.
+Pět pilířů competitive advantage.
 
-První - proven FTMO model. 500 milionů plus annual revenue validuje challenge economics. Risk management, compliance, fraud detection - všechno battle-tested. Neexperimentujeme, aplikujeme ověřený model na nový vertical.
+První - proven FTMO model. 500 milionů plus annual revenue validuje challenge economics. Risk management, compliance, fraud detection - všechno battle-tested. Neexperimentujeme, aplikujeme ověřený model na nový vertical. Tohle je proven foundation, ne experiment.
 
-Druhý - sports-native product. Postaveno PRO sportovní fanoušky od prvního dne. Ne generické P2P rozhraní s nalepením sportovních dat. Flashscore-level UX quality. Vím co sports users chtějí, čtyři roky zkušeností. Live-betting optimized - 50 procent plus trhu je live, competitors to ignorují, my to máme v MVP.
+Druhý - sports-native product. Postaveno PRO sportovní fanoušky od prvního dne. Ne generické P2P rozhraní s nalepením sportovních dat. Flashscore-level UX quality je standard. Vím co sports users chtějí, čtyři roky product experience ve sportovním contentu. Live-betting optimized from MVP - 50 procent plus trhu je live betting, majority competitors to ignorují, my to máme jako core feature od začátku. Tohle je product differentiace.
 
-Třetí - multi-platform strategy. Polymarket plus Kalshi integration. Diversifikace rizika, not dependent on single platform. Future-proof approach jak P2P markets evolvují. Competitors jsou Polymarket-only, single point of failure.
+Třetí - multi-platform strategy. Polymarket plus Kalshi integration od month 6. Diversifikace dependency risk, not locked into single platform. Future-proof architecture jak P2P markets evolvují. Competitors jsou Polymarket-only, single point of failure. My máme platform flexibility.
 
-Čtvrtý - FTMO infrastruktura. Compliance framework already exists. Cloud infrastructure ready. Operational know-how. Starting deset kroků ahead, competitors building from zero.
+Čtvrtý - FTMO infrastructure leverage. Compliance framework already exists. Cloud infrastructure ready to scale. Operational know-how - customer support, finance, fraud detection. Starting deset kroků ahead competitors building from zero. Tohle je execution advantage.
 
-Pátý - target USA first. Clear regulatory path, demo capital model. Polymarket Kalshi available in USA. Large addressable market, 37 states legalizováno. Avoid EU regulatory complexity.
+Pátý - target USA first. Clear regulatory path s demo capital model. Polymarket Kalshi both available in USA. Large addressable market, 37 states sports betting legalizováno. Avoid EU regulatory complexity initially. Strategický market choice.
 
-Competitive reality - ano, máme konkurenci, PropMarket, FundedPoly, PolyFundr. Ale Polymarket-only, malé účty, generické UX, žádné sportovní zaměření. LEVL strategie - lepší produkt, multi-platform, větší účty, sports-native UX, FTMO základ.
+Competitive reality - ano, competitors exist. PropMarket, FundedPoly, PolyFundr. Ale všichni Polymarket-only, malé account sizes, generické UX, žádné sports-native features. Naše strategie - better product, multi-platform diversification, larger account sizes, sports-native UX optimization, FTMO foundation.
 
-We're not first movers, we're better movers.
+We're not first movers, we're better movers. Product quality a execution beat speed to market.
 
 ---
 
-# SLIDE 22: QUESTIONS
+# SLIDE 25: QUESTIONS
 
 **Vizuál:** Jednoduchý, čistý slide
 
 **Obsah:**
-- Logo LEVL
 - "Questions?"
 - Kontaktní informace
 
@@ -1046,7 +1374,7 @@ Key takeaways pokud je potřeba opakovat. Masivní trh s perfektním timingem, l
 
 ---
 
-# SLIDE 23: DISCUSSION
+# SLIDE 26: DISCUSSION
 
 **Vizuál:** Prázdný slide pro diskuzi
 
@@ -1077,7 +1405,7 @@ Děkuji za pozornost.
 - Diskuze (3 slidy)
 
 **Délka:** ~30 minut
-**Formát:** Tmavé téma, LEVL brand colors (Electric Green, Cyber Yellow, Deep Black)
+**Formát:** Tmavé téma, čistý moderní design
 
 **Klíčové změny od předchozí verze (9.7.):**
 1. **Přiznána konkurence:** PropMarket, FundedPoly, PolyFundr - nejsme "first mover"
@@ -1089,7 +1417,7 @@ Děkuji za pozornost.
 7. **Competitive positioning:** "Better movers, not first movers"
 8. **USA first strategy:** Ne EU (regulatory)
 9. **Multi-platform:** Polymarket + Kalshi
-10. **FTMO brand separation:** No "brand trust" v infrastructure (oddělené značky)
+10. **FTMO infrastructure:** Leveraging proven systems (compliance, fraud detection, cloud)
 11. **Live betting emphasis (13.7.2026):** 50%+ market volume je live, 3× růst vs pre-match - kritické pro MVP
 12. **Micro-betting (Future):** Next-level live betting feature pro competitive edge
 
